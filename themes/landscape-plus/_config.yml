@@ -1,0 +1,49 @@
+# Header
+menu:
+  主頁: /
+  文章存檔: /archives
+  關於: /about
+
+rss: /atom.xml
+
+# Content
+excerpt_link: 閲讀更多
+fancybox: false
+mathjax: false
+
+# Sidebar
+sidebar: right
+widgets:
+- a_otp
+- weibo
+- category
+#- tag
+- tagcloud
+#- archive
+#- recent_posts
+- update_log
+- gamertag
+- banner
+- links
+
+# Links
+links:
+  托管在Sinaapp的Wordpress（已死）: http://wfhtony.sinaapp.com/
+  如果Github Page下的字顯示不完整，請前往此鏡像站: http://wfhtony.coding.me/
+
+# Miscellaneous
+google_analytics: UA-64882117-1
+favicon: /favicon.png
+twitter: wfhtony
+google_plus: +wfhtony
+fb_admins: 
+fb_app_id: 
+
+# Duoshuo
+#duoshuo_shortname: wfhtony
+
+# Disqus
+#disqus_shortname: wfhtony
+
+# Baidu share
+baidushare: true

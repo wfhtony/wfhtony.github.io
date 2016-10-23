@@ -1,0 +1,38 @@
+{
+  "name": "hexo-site",
+  "version": "0.0.0",
+  "private": true,
+  "hexo": {
+    "version": "3.2.2"
+  },
+  "dependencies": {
+    "hexo": "^3.1.0",
+    "hexo-admin": "^2.1.0",
+    "hexo-autolinker": "^1.0.1",
+    "hexo-deployer-git": "^0.2.0",
+    "hexo-encrypt": "^0.4.0",
+    "hexo-footnotes": "^1.0.1",
+    "hexo-fs": "^0.1.6",
+    "hexo-generator-archive": "^0.1.2",
+    "hexo-generator-category": "^0.1.2",
+    "hexo-generator-feed": "^1.2.0",
+    "hexo-generator-i18n": "0.0.5",
+    "hexo-generator-index": "^0.1.2",
+    "hexo-generator-index-i18n": "^0.1.1",
+    "hexo-generator-sitemap": "^1.1.2",
+    "hexo-generator-tag": "^0.1.1",
+    "hexo-git-backup": "^0.1.2",
+    "hexo-hrefmd": "^1.0.1",
+    "hexo-migrator-wordpress": "^0.1.2",
+    "hexo-renderer-ejs": "^0.1.0",
+    "hexo-renderer-marked": "^0.2.4",
+    "hexo-renderer-stylus": "^0.2.0",
+    "hexo-server": "^0.1.2",
+    "hexo-sliding-spoiler": "^1.1.6",
+    "hexo-spoiler": "^1.1.5",
+    "hexo-tag-bilibili": "^0.2.1",
+    "hexo-tag-niconico": "^1.0.1",
+    "hexo-tag-video": "0.0.2",
+    "hexo-toc": "^1.0.4"
+  }
+}

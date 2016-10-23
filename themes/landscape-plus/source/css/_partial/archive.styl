@@ -1,0 +1,183 @@
+.archives-wrap
+  margin: block-margin 0
+
+.archives
+  clearfix()
+
+.archive-year-wrap
+  margin-bottom: 1em
+  line-height: 1em
+
+.archive-year
+  @extend $block-caption
+
+.archives
+  column-gap: 10px
+  @media mq-tablet
+    column-count: 2
+  @media mq-normal
+    column-count: 3
+
+.archive-article
+  avoid-column-break()
+
+.archive-article-inner
+  @extend $block
+  padding: 10px
+  margin-bottom: 15px
+
+.archive-article-title
+  text-decoration: none
+  font-weight: bold
+  color: color-default
+  transition: color 0.2s
+  line-height: line-height
+  &:hover
+    color: color-link
+
+.archive-article-footer
+  margin-top: 1em
+
+.archive-article-date
+  color: color-grey
+  text-decoration: none
+  font-size: 0.85em
+  line-height: 1em
+  margin-bottom: 0.5em
+  display: block
+
+#page-nav
+  clearfix()
+  margin: block-margin auto
+  background: #fff
+  box-shadow: 1px 2px 3px #ddd
+  border: 1px solid color-border
+  border-radius: 3px
+  text-align: center
+  color: color-grey
+  overflow: hidden
+  a, span
+    padding: 10px 20px
+    line-height: 1
+    height: 2ex
+  a
+    color: color-grey
+    text-decoration: none
+    &:hover
+      background: color-grey
+      color: #fff
+  .prev
+    float: left
+  .next
+    float: right
+  .page-number
+    display: inline-block
+    @media mq-mobile
+      display: none
+  .current
+    color: color-default
+    font-weight: bold
+  .space
+    color: color-border
+
+//toc
+#toc.toc-article
+  background color-background
+  border-radius 4px
+  margin 1.6em 1 1.6em 2em
+  line-height 1.5em
+  font-size 0.9em
+  -webkit-border-radius 4px
+
+  h2, ol
+    padding 0 0.4em
+    margin 0
+  h2
+    cursor pointer
+  @media mq-mobile
+    margin 1.6em 0
+    width 100%
+  @media mq-tablet
+    margin 1.6em 0
+    width 100%
+#toc
+  line-height 1.3em
+  font-size 0.8em
+  float right
+  .toc
+    li
+      list-style-type none
+      a
+        &:hover
+          color color-font
+          text-decoration none !important
+  .toc-child 
+    padding-left 1.5em
+#toc.toc-aside
+  display none
+  width 13%
+  position fixed
+  right 2%
+  top 360px
+  line-height 1.5em
+  max-height: 68%
+  overflow: auto
+  font-size 1em
+  color color-heading
+  opacity .6
+  transition opacity 1s ease-out
+  @media mq-mobile
+    width 60%
+    height 40%
+    right 58px 
+    padding 0 20px
+    background #fff
+    overflow auto
+  @media mq-tablet
+    width 60%
+    height 40%
+    right 58px 
+    padding 0 20px
+    background #fff
+    overflow auto
+  h2
+    padding 0.3em 0
+    color color-font
+  &:hover
+    transition opacity .3s ease-out
+    opacity 1
+  a
+    transition color 1s ease-out
+    text-decoration none
+    color color-link
+    &:hover
+      color color-theme
+      transition color .3s ease-out
+
+/*! css3 animate */
+.animated
+  animation-fill-mode both
+  animation-duration 1s
+
+@-webkit-keyframes fadeIn
+  0%
+    opacity 0
+  100%
+    opacity 1
+
+.fadeIn
+  animation-name fadeIn
+
+@keyframes fadeInDown
+  0%
+    opacity 0
+    transform translateY(-20px)
+  100% 
+    opacity 1
+    transform translateY(0)
+
+.fadeOut
+  animation-name fadeOut
+
+.moveMain
+  margin-left 10% !important
