@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://tc2.wfhtony.space/images/2021/04/15/2477a57e4cb950b0f0442353bcd123d8.jpg">
 <meta property="og:image" content="https://tc2.wfhtony.space/images/2021/04/15/011c2361c111d98e0858f8ad4899c917.jpg">
 <meta property="article:published_time" content="2021-04-14T17:08:14.000Z">
-<meta property="article:modified_time" content="2021-04-17T17:31:12.025Z">
+<meta property="article:modified_time" content="2021-04-17T17:34:08.471Z">
 <meta property="article:author" content="wfhtony">
 <meta property="article:tag" content="PSVita">
 <meta property="article:tag" content="備份">
@@ -223,6 +223,7 @@ ga('send', 'pageview');
 <p>順帶提一嘴，備份下來的PSP/PS1遊戲可以直接在PSP實機上運行，PSP模擬器（<a href="https://ppsspp.org/" target="_blank" rel="noopener">PPSSPP</a>等）也可以直接運行PSP遊戲。<br>PS1遊戲雖然不能直接通過PSP模擬器運行，但是可以利用<a href="https://github.com/xdotnano/PSXtract" target="_blank" rel="noopener">PSXtract</a>等工具將PBP文件提取ROM並轉換成鏡像文件。</p>
 <p>還有，要是你有裝「<a href="https://www.jp.playstation.com/psvita/pocketstation/" target="_blank" rel="noopener">PocketStation® for PlayStation®Vita</a>」（模擬PocketStation的官方模擬器，雖然依附在PSV自帶的PSP模擬器中，但是僅PSV可以用）的話，也請把「ux0:<strong>ps1emu</strong>」拷出來。</p>
 <p>基本上，備份的話這點內容就足夠了。<br>簡單的說，就是在知道目錄結構的情況下直接CTRL+C、CTRL+V就完事了。</p>
+<p><del>題外話，<br>咱在重新把PS1的遊戲從商店裏下下來的時候，才發現當時日服已經把商店裏有上架的（D3的）SIMPLE 1500系列全都送過一遍了…</del></p>
 <h3><span id="bei-fen-cun-dang">備份存檔</span></h3><p>至於存檔的話，理論上拷貝「ux0:user/00/savedata」就可以了，但是PSV的存檔系統…是和遊戲是綁在一起的，不能獨立存在。</p>
 <p>所以咱更建議利用其他自製程序（比如「必要工具」裏面列出來的「vita-savemgr」）來導出並管理你的存檔。<br>利用「vita-savemgr」備份後的存檔都會保存在「ux0:<strong>data/savegames</strong>」中，備份的時候把這個文件夾拷出來就行。</p>
 <h2><span id="huan-yuan-bei-fen">還原備份</span></h2><p>還原的話就是對應的逆操作，只是需要知道對應遊戲或者應用的TITLE_ID（如果你只需要裝一個遊戲的遊戲本體、補丁及DLC的話）。<br>「<strong>license</strong>」這個文件夾也不要忘了複製回PSV的對應位置。</p>
