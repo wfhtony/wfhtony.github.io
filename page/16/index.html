@@ -103,6 +103,96 @@ ga('send', 'pageview');
     <div class="outer">
       <section id="main">
   
+    <article id="post-Working/markdown-test-encrypt" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/07/04/Working/markdown-test-encrypt/" class="article-date">
+  <time datetime="2012-07-04T15:33:33.000Z" itemprop="datePublished">2012-07-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/07/04/Working/markdown-test-encrypt/">Encrypt Test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      <!-- Table of Contents -->
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><script src="/js/crypto-js.js"></script>
+<script>
+function doDecrypt (pwd, onError) {
+	console.log('in doDecrypt');
+	const txt = document.getElementById('enc_content').innerHTML;
+	let plantext;
+	try {
+		const bytes = CryptoJS.AES.decrypt(txt, pwd);
+		var plaintext = bytes.toString(CryptoJS.enc.Utf8);
+	} catch(err) {
+		if(onError) {
+			onError(err);
+		}
+		return;
+	}
+	document.getElementById('enc_content').innerHTML = plaintext;
+	document.getElementById('enc_content').style.display = 'block';
+	document.getElementById('enc_passwd').style.display = 'none';
+	if(typeof MathJax !== 'undefined') {
+		MathJax.Hub.Queue(
+			['resetEquationNumbers', MathJax.InputJax.TeX],
+			['PreProcess', MathJax.Hub],
+			['Reprocess', MathJax.Hub]
+		);
+	}
+}
+</script>
+<div id="enc_content" style="display:none">U2FsdGVkX1/SoFoFtQwWbK3qIL17SC91/5ncL1KJgTHBvqY5YcZR2p8MHmbBUwdvOqA8zpAxmWG/xjt0xWpptqF54sXUmfrNS5bfCYkKIf4c6BTGwsJToPKJRCOduZopFU9ng/n+4QAsOujjUOzhMsbz7oj58/1uOJR2RZqg+cO0SJn0zVQz8s496ScJKvr5r8bn0vXi1ndCxYzR+TohrhzAeepNRPaVXlXRaZJxa9RNagpWpfhWcJzBzw/cAZ82p9w/CZcoOdZfyWjD/OvkGVcJoOuPqmPyrzd+2OWh3QV1l2zNCCu4mGWV+bHrNoP9CRmKW6B5UN/K2AxItPkgNbnp21RON+fU27ZLqb9CBRT0kq913jm65kUFDyMQ+u/Zf2EEX1oiswUWnaj1A0MouMYKWst2bH4IZDtvsnftRAJUHuSwPIjem7McRY3i9g9VjNUGIxGdV7r4HtJWh+1cZFI6uiaHWuGFY0WJGb2F5FyOULSLzFEdEkrYWQsssv9wl8HMVQqa8+WJOixQB1GoSbHfTQiaFkggkC3qUqHY9Z1h9HitvS22DUWGMvJeGwEpPyZzQgok9gGU9NGfcUwhx6OuWf5AWvqnz8fHIGFRKUqlo8O4J4+36/Gw5RO35FEiiK2XdWjWGZ/88Mhw8v8MynH/oB98pHVRPEuYIq8mpQOPdhzkkL5PyawMNM0ahOpE0wmMZZ9fufeV0bHmh6QJ6LbBgPMuBS3Lxz+h9T190sqsauGJ0fDTJbzje163Qshm+mLkmpl5Z28U3Ql3WbDnqOUyggLi2M/eBrk1Gy6v8mQUh9oOnGwIJe2T2ZFTySsSxhsZ6vprEhzpCDMl9wXwa9lG6YPKuR33ru4AhMb8U7JBo31RaPXf1PZ5JrKbxHOb9uoEEEWM6jddnlqm0+qoZOLMmCCxFpQB+dom+8yoON0BNFr25Szflu0R4XEjHT8XcGcOywvfDJVeLLeKxBhiEP/Wuy6BkU4K2/STKqcXTJXy/omgdo2WOKyl2JZdDpZtu9xPy/AEd+RuqvJPAjIpoBB93y+kbXA0TvrQOOfUQRWyavkBruzsMHLLxmAVGjVvrcrcyNj3ZVordNeu6hAGeQ88oUhs5Vxe0rJ7JgLS7HlSjpJkFR3ui1C0nnOrMAvgwoMvQIWWAovirksflFJZbLbEWRiaLUmsGS1hRB0M7auiebKVAGz9ORIThdIPIGWc6v9ZOFP1cpblkNrNj7/l9mk10EtfgX116NlT+zOH/2NU67SOyEZJvzED6woGVYQcZ1IL6nrZBGaWb4Zn9cD98pW0RX0OEbZksxjJa8K11Cgzj0YL7fGgxg9QbTXhwcyFbA32fp+dVoTccw4xwJoJ8jEMDlDTmC+Po6xMV+ypS54HeqRjSoe6KFhwR4Qj9yvE22RgsrMHz20avV8dn+DXEytqksm5deyJlfRkEGQNSeYozhXNiIp8v4zqYGFeRfWZGzlSVlFYAbR+kXckK/X4J2Uhh9Xc7kxJWTzOZOef3oPgZiTEjOXfJy9G5CwuLwGUUyBwa32OjElAss9u7UY9eA==</div>
+<div id="enc_passwd"> <input id="enc_pwd_input" type="password" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div>
+<script>
+var onError = function(error) {
+	document.getElementById("enc_error").innerHTML = "password error!"
+};
+function decrypt() {
+var passwd = document.getElementById("enc_pwd_input").value;
+console.log(passwd);
+doDecrypt(passwd, onError);
+}
+</script>
+</div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://wfhtony.github.io/2012/07/04/Working/markdown-test-encrypt/" data-id="cl0uq3g7100563sv2epbzaxe9" class="article-share-link">Share</a>
+      
+	  
+      
+        <a href="https://wfhtony.github.io/2012/07/04/Working/markdown-test-encrypt/#disqus_thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Test/" rel="tag">Test</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-imas-hi-res/nc/cg/cm-3chord" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2011/01/01/imas-hi-res/nc/cg/cm-3chord/" class="article-date">
@@ -913,96 +1003,6 @@ doDecrypt(passwd, onError);
 
 
   
-    <article id="post-imas-hi-res/nc/cg/cm-c55_c60" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2011/01/01/imas-hi-res/nc/cg/cm-c55_c60/" class="article-date">
-  <time datetime="2010-12-31T16:00:21.000Z" itemprop="datePublished">2011-01-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a>►<a class="article-category-link" href="/categories/%E9%9B%9C%E8%AB%87/%E8%87%AA%E8%B3%BC%E8%87%AA%E5%88%86%E4%BA%AB/">自購自分享</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2011/01/01/imas-hi-res/nc/cg/cm-c55_c60/">[自購自分享] THE IDOLM@STER CINDERELLA MASTER 系列 (CS55～60+TS08～09+α)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      <!-- Table of Contents -->
-      
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><script src="/js/crypto-js.js"></script>
-<script>
-function doDecrypt (pwd, onError) {
-	console.log('in doDecrypt');
-	const txt = document.getElementById('enc_content').innerHTML;
-	let plantext;
-	try {
-		const bytes = CryptoJS.AES.decrypt(txt, pwd);
-		var plaintext = bytes.toString(CryptoJS.enc.Utf8);
-	} catch(err) {
-		if(onError) {
-			onError(err);
-		}
-		return;
-	}
-	document.getElementById('enc_content').innerHTML = plaintext;
-	document.getElementById('enc_content').style.display = 'block';
-	document.getElementById('enc_passwd').style.display = 'none';
-	if(typeof MathJax !== 'undefined') {
-		MathJax.Hub.Queue(
-			['resetEquationNumbers', MathJax.InputJax.TeX],
-			['PreProcess', MathJax.Hub],
-			['Reprocess', MathJax.Hub]
-		);
-	}
-}
-</script>
-<div id="enc_content" style="display:none">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</div>
-<div id="enc_passwd"> <input id="enc_pwd_input" type="password" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div>
-<script>
-var onError = function(error) {
-	document.getElementById("enc_error").innerHTML = "password error!"
-};
-function decrypt() {
-var passwd = document.getElementById("enc_pwd_input").value;
-console.log(passwd);
-doDecrypt(passwd, onError);
-}
-</script>
-</div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://wfhtony.github.io/2011/01/01/imas-hi-res/nc/cg/cm-c55_c60/" data-id="cl0uq3gdi00xi3sv2be9dd35b" class="article-share-link">Share</a>
-      
-	  
-      
-        <a href="https://wfhtony.github.io/2011/01/01/imas-hi-res/nc/cg/cm-c55_c60/#disqus_thread" class="article-comment-link">Comments</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hi-Res/" rel="tag">Hi-Res</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iDOLM-STER/" rel="tag">iDOLM@STER</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/15/">⇦ 前頁</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/17/">次頁 ⇨</a>
@@ -1049,7 +1049,7 @@ doDecrypt(passwd, onError);
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a><span class="category-list-count">212</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/">PS4隨手玩</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/Playstation-Plus/">Playstation Plus</a><span class="category-list-count">93</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/%E8%87%AA%E8%B3%BC%E8%87%AA%E5%88%86%E4%BA%AB/">自購自分享</a><span class="category-list-count">82</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a><span class="category-list-count">213</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/">PS4隨手玩</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/Playstation-Plus/">Playstation Plus</a><span class="category-list-count">93</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/%E8%87%AA%E8%B3%BC%E8%87%AA%E5%88%86%E4%BA%AB/">自購自分享</a><span class="category-list-count">82</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -1070,6 +1070,14 @@ doDecrypt(passwd, onError);
       <ul>
         <li>
           <center><p><strong>[只保留最近十天的消息]</strong></p></center>
+          <hr />
+          <hr />
+          <strong>2022-08-22</strong> 
+          <hr />
+          <blockquote>
+            <p><strong>發佈</strong>：<a href="/2022/08/22/imas-cgss-7th-anniversary/">[iOS & Android App] アイドルマスター シンデレラガールズ スターライトステージ / 騙氪大師 灰姑娘女孩 白氪舞臺 七週年倒計時</a></p>
+            <p><strong>內容</strong>：嗯...七年了，還是老樣子，8/22至9/3(4)，（除最終日9/3之外）每日更新。</p>
+          </blockquote>
           <hr />
           <hr />
           <strong>2022-08-20</strong> 
@@ -1141,14 +1149,6 @@ doDecrypt(passwd, onError);
             <p><strong>更新</strong>：<a href="/2015/03/16/psn-sth-useless-note/">[雜談] [PSN] 一些游戲的PKG地址</a></p>
             <p><strong>內容</strong>：添加「サモンナイト４ PSP® the Best」(NPJH50410)、「やるドラ ポータブル 雪割りの花」(NPJG00051) 的PKG地址。</p>
           </blockquote>
-          <hr />
-          <hr />
-          <strong>2022-06-21</strong> 
-          <hr />
-          <blockquote>
-            <p><strong>更新</strong>：<a href="/2017/08/22/imas-cgss/video/">[iOS & Android App] ［デレステ］一些雜七雜八的視頻 總目錄</a></p>
-            <p><strong>內容</strong>：遊戲內MV 追加「チカラ！イズ！ぱわー！！」。</p>
-          <hr />
           <hr />
           <center><p><strong>完整日誌可以前往<a href="/2012/12/21/update_log/">這裡</a>查看。</strong></p></center>
         </li>
