@@ -1,17 +1,20 @@
 .spoiler {
     margin: 5px 0;
     padding: 0 15px;
-    border: 1px solid #E5E5E5;
+    // border: 1px solid #E5E5E5;
+    border: 1px solid #6e6e6e;
     position: relative;
     clear: both;
     border-radius: 3px;
 }
 
 .spoiler .spoiler-title {
-    background: #E5E5E5;
+    background: #6e6e6e;
+    // background: #E5E5E5;
     margin: 0 -15px;
     padding: 5px 15px;
-    color: #353535;
+    // color: #353535;
+    color: #d8d8d8;
     font-weight: bold;
     font-size: 13px;
     display: block;

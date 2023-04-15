@@ -885,14 +885,14 @@ a.article-title:hover {
     margin-left: -4px;
     content: "";
     border-radius: 50%;
-    background: #2f2f2f;
+    background: #979797;
     -webkit-box-shadow: 0 1px 2px #8e8e8e;
     box-shadow: 0 1px 2px #8e8e8e;
   }
 }
 .article-nav-link-wrap {
   text-decoration: none;
-  text-shadow: 0 1px #8e8e8e;
+  text-shadow: 0 0.5px #3c3c3c;
   color: #999;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -927,7 +927,7 @@ a.article-title:hover {
 .article-nav-caption {
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #2f2f2f;
+  color: #c5c5c5;
   line-height: 1em;
   font-weight: bold;
 }
