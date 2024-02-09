@@ -102,6 +102,56 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-Wordpress/just-a-moment" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/07/16/Wordpress/just-a-moment/" class="article-date">
+  <time datetime="2014-07-16T03:19:52.000Z" itemprop="datePublished">2014-07-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/07/16/Wordpress/just-a-moment/">就一句話</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      <!-- Table of Contents -->
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>咱覺得自從咱的一塊2T硬盤出現問題以後，咱的拖延症就再也治不好了= =</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://wfhtony.github.io/2014/07/16/Wordpress/just-a-moment/" data-id="clnecd26l004mocv205tc80pi" class="article-share-link">Share</a>
+      
+	  
+      
+        <a href="https://wfhtony.github.io/2014/07/16/Wordpress/just-a-moment/#disqus_thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Wordpress/ant-dvd" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/04/26/Wordpress/ant-dvd/" class="article-date">
@@ -862,96 +912,6 @@
 
 
   
-    <article id="post-Working/markdown-test-encrypt" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/07/04/Working/markdown-test-encrypt/" class="article-date">
-  <time datetime="2012-07-04T15:33:33.000Z" itemprop="datePublished">2012-07-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/07/04/Working/markdown-test-encrypt/">Encrypt Test</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      <!-- Table of Contents -->
-      
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><script src="/js/crypto-js.js"></script>
-<script>
-function doDecrypt (pwd, onError) {
-	console.log('in doDecrypt');
-	const txt = document.getElementById('enc_content').innerHTML;
-	let plantext;
-	try {
-		const bytes = CryptoJS.AES.decrypt(txt, pwd);
-		var plaintext = bytes.toString(CryptoJS.enc.Utf8);
-	} catch(err) {
-		if(onError) {
-			onError(err);
-		}
-		return;
-	}
-	document.getElementById('enc_content').innerHTML = plaintext;
-	document.getElementById('enc_content').style.display = 'block';
-	document.getElementById('enc_passwd').style.display = 'none';
-	if(typeof MathJax !== 'undefined') {
-		MathJax.Hub.Queue(
-			['resetEquationNumbers', MathJax.InputJax.TeX],
-			['PreProcess', MathJax.Hub],
-			['Reprocess', MathJax.Hub]
-		);
-	}
-}
-</script>
-<div id="enc_content" style="display:none">U2FsdGVkX19PiyxU0+AsfaecpImsyTwx54aSgIScTUhcMRW4UQ02qUtUHhaXbUphi6pqR8yvtarE0SpnXab6ok+KCHBy/clanMHDFNZb5p+1PZwepBMfiGS8juN8KVKTPgeJMZ/wpKnQsWPooRijBdXzUrwzhGugaB62etR9MfKmwdjmVCAoVN0bItBvE03GPRutLFNhlARk8cuOiiL8s6j/xBAoxSKBul1IdHDXThoM8Z/M2DembhmCcnhFutyZyaP0FhY+DD8EO3UastikSohpn50Uj4Li9DcgGgoDt6KmZi1lmK24MXUCJT56Jp0JMC7aAr1f1AyitLjt5zhAEBp6tVGlZiigN46EPG651JscEi0/lIK4RNFs7on0ZRUZFZa5y/Cba/o6ss+DL3o2uawPsNEncpUM8C0/V0+pgaWAG8ilqZJ1wWvRKoU1R92hL+6FHrcrvujU2+0cPFYiZ5PUFAzHPnzGSX0z3pG4/HBAtVu/yCj4U/+S1jJZHork1xcqxsCjL0CFKa8nA/iwXVXg5D4MmVsYUeEGl7+hpfEdVcFU0+HSkfaRGSs+mNAo2Z5RESZv+VczsXNmJhenBLjCvJzIkOvG66w+0ikUMoqb21e1D5iIh3aAJ/UxCybBPj+6MFvnkSD4Jg0HHuYJNAEUvV9uqVsZh8UR2D2zg3AEGX3yhdlQvNlmHhMM8/I8PnHHf0rT9NJbxU4x9C1u/RrX8igJt9RXS0W+nE6ku82Xxd6+CFPXc2XKjJx0nsF8qO1KVjvZqfbBpdMtgWBMy9mdrNhR/Sdy6Ng6KwkjW0qHHZGMqjG2AEm2QZ+CmAP8DriAEQeBa88qGyFDdk56nqnvVDENs2E49P0HY5kWlcp5QgWuDP2Fx63O7GYwwNSZu7RaqDoViWq4iMgumiMXkXqxWFWML8sayHsCURz7Pzq04h4UOnQjhxXsZiDyVVsSrFyoH6Dq7je7qycidNd1FJhPHJBUNquexEM44OuHAf1z+dvbr2VMJ1O3hm6N9DYeRbf5hMdWNGsUQZPu1ehv9AotNuqZQkPVU4/4w2feUjf2y93lo9oIK0UEAsWC/Vwv7FokYjs7j/rRGgQluB+951rJjPcIKa8FCwiKbOHjhlLKhZzPzn5SSy1XwavdL4dng7yM6NS3OYcqKU9GGIoe2/lnASTRL/J4LMVvdA3mTOQ2P12ehNytEC0R9CHcbMIRHGyf9rAaQrhxYK6ADluWBvVaYlEvAgDV1ffncqC7YusfT/jFNrp96XW0CKamU9czjLivWgO+5TklwUX+dPH9CmlBiU4leWnMZUk/LamF7HcoW7g24CihXD5zCLyT4HCKhPONjRmA8GmhrGeVlXEpIVj0l8v3nhCu4Intp0Eu0bFhAl+lPQ6G4fy9ngOfnsRfWQpK4oMnWW0sMhzfxEAKcYTVQrATkhAw0PHJ+oKAQZgufgat5A4CoJEOhmGr1EEAS6iUP0qYWKo2EcuP8cQ+nj5S4gxQITWriIDSl344bHcksT57VizALpHZYmHKpISEM/NKSOFDnVY2ZpR/zZQjUw==</div>
-<div id="enc_passwd"> <input id="enc_pwd_input" type="password" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div>
-<script>
-var onError = function(error) {
-	document.getElementById("enc_error").innerHTML = "password error!"
-};
-function decrypt() {
-var passwd = document.getElementById("enc_pwd_input").value;
-console.log(passwd);
-doDecrypt(passwd, onError);
-}
-</script>
-</div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://wfhtony.github.io/2012/07/04/Working/markdown-test-encrypt/" data-id="clnecd26g003yocv24wpwboun" class="article-share-link">Share</a>
-      
-	  
-      
-        <a href="https://wfhtony.github.io/2012/07/04/Working/markdown-test-encrypt/#disqus_thread" class="article-comment-link">Comments</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Test/" rel="tag">Test</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/16/">⇦ 前頁</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/18/">次頁 ⇨</a>
@@ -967,7 +927,7 @@ doDecrypt(passwd, onError);
     <div class="widget">
       <ul>
         <li>
-          <a href="/2024/01/03/ps-plus-jpn/2024-01/">[PSN] PlayStation Plus 日服 二〇二四年 一月 會免游戲替換地址綜合文</a></p>
+          <a href="/2024/02/09/ps-plus-jpn/2024-02/">[PSN] PlayStation Plus 日服 二〇二四年 二月 會免游戲替換地址綜合文</a></p>
           <hr />
           <a href="/2015/03/16/psn-sth-useless-note/">[雜談] [PSN] 一些游戲的PKG地址</a>
           <hr />
@@ -1000,7 +960,7 @@ doDecrypt(passwd, onError);
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a><span class="category-list-count">244</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/">PS4隨手玩</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/Playstation-Plus/">Playstation Plus</a><span class="category-list-count">110</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/%E8%87%AA%E8%B3%BC%E8%87%AA%E5%88%86%E4%BA%AB/">自購自分享</a><span class="category-list-count">94</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a><span class="category-list-count">245</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/">PS4隨手玩</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/Playstation-Plus/">Playstation Plus</a><span class="category-list-count">111</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/%E8%87%AA%E8%B3%BC%E8%87%AA%E5%88%86%E4%BA%AB/">自購自分享</a><span class="category-list-count">94</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -1021,6 +981,17 @@ doDecrypt(passwd, onError);
       <ul>
         <li>
           <center><p><strong>[只保留最近十天的消息]</strong></p></center>
+          <hr />
+          <hr />
+          <strong>2024-02-09</strong> 
+          <hr />
+          <blockquote>
+            <p><strong>發表</strong>：<a href="/2024/02/09/ps-plus-jpn/2024-02/">[PSN] PlayStation Plus 日服 二〇二四年 二月 會免游戲替換地址綜合文</a></p>
+            <p><strong>內容</strong>：更新PKG地址。</p>
+            <hr />
+            <p>這兩天身體狀況不是很好，這篇晚了幾天更新。</p>
+            <p>不管怎麼說，咱在這裏還是先給各位拜個年吧。祝各位新年快樂。</p>
+          </blockquote>
           <hr />
           <hr />
           <strong>2024-01-28</strong> 
@@ -1100,14 +1071,6 @@ doDecrypt(passwd, onError);
           <blockquote>
             <p><strong>更新</strong>：<a href="/2017/08/22/imas-cgss/video/">[iOS & Android App] ［デレステ］一些雜七雜八的視頻 總目錄</a></p>
             <p><strong>內容</strong>：遊戲內MV 追加「この恋の解を答えなさい」。</p>
-          </blockquote>
-          <hr />
-          <hr />
-          <strong>2023-11-18</strong> 
-          <hr />
-          <blockquote>
-            <p><strong>更新</strong>：<a href="/2017/08/22/imas-cgss/video/">[iOS & Android App] ［デレステ］一些雜七雜八的視頻 總目錄</a></p>
-            <p><strong>內容</strong>：遊戲內MV 追加「D-ark L-ily's Grin」。</p>
           </blockquote>
           <hr />
           <hr />
