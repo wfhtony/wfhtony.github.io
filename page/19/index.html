@@ -102,6 +102,96 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-Working/markdown-test-encrypt" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/07/04/Working/markdown-test-encrypt/" class="article-date">
+  <time datetime="2012-07-04T15:33:33.000Z" itemprop="datePublished">2012-07-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/07/04/Working/markdown-test-encrypt/">Encrypt Test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      <!-- Table of Contents -->
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><script src="/js/crypto-js.js"></script>
+<script>
+function doDecrypt (pwd, onError) {
+	console.log('in doDecrypt');
+	const txt = document.getElementById('enc_content').innerHTML;
+	let plantext;
+	try {
+		const bytes = CryptoJS.AES.decrypt(txt, pwd);
+		var plaintext = bytes.toString(CryptoJS.enc.Utf8);
+	} catch(err) {
+		if(onError) {
+			onError(err);
+		}
+		return;
+	}
+	document.getElementById('enc_content').innerHTML = plaintext;
+	document.getElementById('enc_content').style.display = 'block';
+	document.getElementById('enc_passwd').style.display = 'none';
+	if(typeof MathJax !== 'undefined') {
+		MathJax.Hub.Queue(
+			['resetEquationNumbers', MathJax.InputJax.TeX],
+			['PreProcess', MathJax.Hub],
+			['Reprocess', MathJax.Hub]
+		);
+	}
+}
+</script>
+<div id="enc_content" style="display:none">U2FsdGVkX18tXEKXM/mhcTGQ9w9CQwgfCWje30MZA5jINLkmUN2FZqDKOmKk9ecoJTBdhzQRyEAe2oTn10Q9L3qI6DZFLWdKyw+zL9ez6rWs0HuUBDRjTBdtBevD4jGtccMIYfYYw2nT4zqLlsRaJhhya+wk4IFgvAd8VSS9VWl46cju3Ht+o9b/7rB8v44/0dmNlGWVUOVUANOpOMYY81EhkJg39rSJo3EIs8MIvJdk02GsldHXkcfgKv7hZmPBIOD/WI7kFA5FxHPz7My3535unOUjkdaDfcxIOqf7MyoNBjhiK1sTWigy/H5WM9EJkhfgBrmdxoOY+g8YxDQifX1butDjPxxNijKthk3SCPZctAb+s59A9en4J8R1Jt7j+DT8eyySjcZeqeW/IzJPBDsII3mmcBsVk8Q8JnljxxnF+83uyX6txh9hVzPtAO9mfcMHZWeRhckZhBO03FBvsey1jnQS1m7YeAYOoAIMG64ndYBurMGEmecS8pU3Air6AL9oQSnf7mwILy7RAVGxmTND1fPvst8Addd7ejEBoVWOSM3+8gthI/zsfOzml7GmBsIzbtuicpfuSe1Tp1x7ljSw4XTFYfby2ctJuZ2/+JXTUZy8838gPoM37/ABWiOjRL02OYzcmlw+g/p20HyJe0Urkfu2rs4Dp6ciFaaPl5nSlG7RuFtlP8u12MrlmYfuAZli7LiLjV/fKlrxKpqE+FpF3EwM5fyeRf64RZL62LrRPNDtJg1SflzNiz/dG5fqMYPGVIVA1NRzvaoFpXtC77zi1TLkw6xzAxZ1jHb07OAJytUWj9n+F1OFTskgV/ezrMbS6M2zVTVHQW+P3phloQfMGfx9fdcOJCKKQGNmNDoJtnjKQDB9JDqDDNaJDbkJLwXcjHDqOSPD8eAH/csqQdjKUfqCRsRf9vizfUFquuqeLDG5abNTaj6KzjpdkyPTKPPSgwud1+1OcmiPD4BV6k+rl0+yvY5dgXJVsVznapCwxHFwE6eAUSWVWKYck8zitgoDJRGmmqm21uk5VcIhKWVpnQt6q4jl25902XncbUQFqc3nTlb19sf01oNO0+oPvPGrcXzpDRo9z/7OedyMdyxnsIsqxacHZt3eAl5Zgc2ZM4XPN5/QlxbCFMXcW2ilU7cD0XCKmuCatpMLEPn/94Hy78pDeGqb12KJmyzGvcYMhILl61rYtLmv/g52uphzw8tHESFhI3jEjbfirH1rBxlZmVWp/uqHJ2k58K3seAxrVpwRf7HC9TaceIZkdFFTsugq3EkDCSf6t2huE65tIXpc1n7zEUjz/B/dPlTKBtLHLhkEcuUTAMBKPLkZfnE68ncJsNKbdFZofvsN5t20Sun7CQfVSWIwyNZtUcQye7eCqTMJZhkLhn0zVLSoHtfzSYyWOnMLDZFIy/BTaH3lHIrm+l6yjAqIlwgK8mWWsISHR0MGuUNiINXhE7r/VXEe+f253j3/VjSPYEo0/+JGfD0hoS3jfT3ydXO7DnKoA2C4FH9DSbGdqCOYnzcuTD6VYwVfifHL0nblXF0+R8Aklw==</div>
+<div id="enc_passwd"> <input id="enc_pwd_input" type="password" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div>
+<script>
+var onError = function(error) {
+	document.getElementById("enc_error").innerHTML = "password error!"
+};
+function decrypt() {
+var passwd = document.getElementById("enc_pwd_input").value;
+console.log(passwd);
+doDecrypt(passwd, onError);
+}
+</script>
+</div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://blog.wfhtony.space/2012/07/04/Working/markdown-test-encrypt/" data-id="clvcbvrbq003wxkv2apcf5l0e" class="article-share-link">Share</a>
+      
+	  
+      
+        <a href="https://blog.wfhtony.space/2012/07/04/Working/markdown-test-encrypt/#disqus_thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Test/" rel="tag">Test</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Sth.Secret/donate" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2011/01/01/Sth.Secret/donate/" class="article-date">
@@ -912,96 +1002,6 @@ doDecrypt(passwd, onError);
 
 
   
-    <article id="post-imas-hi-res/nc/cg/ss-next" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2011/01/01/imas-hi-res/nc/cg/ss-next/" class="article-date">
-  <time datetime="2010-12-31T16:00:22.000Z" itemprop="datePublished">2011-01-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a>►<a class="article-category-link" href="/categories/%E9%9B%9C%E8%AB%87/%E8%87%AA%E8%B3%BC%E8%87%AA%E5%88%86%E4%BA%AB/">自購自分享</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2011/01/01/imas-hi-res/nc/cg/ss-next/">[自購自分享] THE IDOLM@STER CINDERELLA GIRLS STARLIGHT MASTER for the NEXT! 系列</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      <!-- Table of Contents -->
-      
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><script src="/js/crypto-js.js"></script>
-<script>
-function doDecrypt (pwd, onError) {
-	console.log('in doDecrypt');
-	const txt = document.getElementById('enc_content').innerHTML;
-	let plantext;
-	try {
-		const bytes = CryptoJS.AES.decrypt(txt, pwd);
-		var plaintext = bytes.toString(CryptoJS.enc.Utf8);
-	} catch(err) {
-		if(onError) {
-			onError(err);
-		}
-		return;
-	}
-	document.getElementById('enc_content').innerHTML = plaintext;
-	document.getElementById('enc_content').style.display = 'block';
-	document.getElementById('enc_passwd').style.display = 'none';
-	if(typeof MathJax !== 'undefined') {
-		MathJax.Hub.Queue(
-			['resetEquationNumbers', MathJax.InputJax.TeX],
-			['PreProcess', MathJax.Hub],
-			['Reprocess', MathJax.Hub]
-		);
-	}
-}
-</script>
-<div id="enc_content" style="display:none">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</div>
-<div id="enc_passwd"> <input id="enc_pwd_input" type="password" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div>
-<script>
-var onError = function(error) {
-	document.getElementById("enc_error").innerHTML = "password error!"
-};
-function decrypt() {
-var passwd = document.getElementById("enc_pwd_input").value;
-console.log(passwd);
-doDecrypt(passwd, onError);
-}
-</script>
-</div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://blog.wfhtony.space/2011/01/01/imas-hi-res/nc/cg/ss-next/" data-id="clvcbvrjg010bxkv2a7kx1sq8" class="article-share-link">Share</a>
-      
-	  
-      
-        <a href="https://blog.wfhtony.space/2011/01/01/imas-hi-res/nc/cg/ss-next/#disqus_thread" class="article-comment-link">Comments</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hi-Res/" rel="tag">Hi-Res</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iDOLM-STER/" rel="tag">iDOLM@STER</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/18/">⇦ 前頁</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/20/">次頁 ⇨</a>
@@ -1017,7 +1017,7 @@ doDecrypt(passwd, onError);
     <div class="widget">
       <ul>
         <li>
-          <a href="/2024/09/03/ps-plus-jpn/2024-09/">[PSN] PlayStation Plus 日服 二〇二四年 九月 會免游戲替換地址綜合文</a>
+          <a href="/2024/10/01/ps-plus-jpn/2024-10/">[PSN] PlayStation Plus 日服 二〇二四年 十月 會免游戲替換地址綜合文</a>
           <hr />
           <a href="/2015/03/16/psn-sth-useless-note/">[雜談] [PSN] 一些游戲的PKG地址</a>
           <hr />
@@ -1052,7 +1052,7 @@ doDecrypt(passwd, onError);
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a><span class="category-list-count">262</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/">PS4隨手玩</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/Playstation-Plus/">Playstation Plus</a><span class="category-list-count">118</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/%E8%87%AA%E8%B3%BC%E8%87%AA%E5%88%86%E4%BA%AB/">自購自分享</a><span class="category-list-count">102</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a><span class="category-list-count">264</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/">PS4隨手玩</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/Playstation-Plus/">Playstation Plus</a><span class="category-list-count">119</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/%E8%87%AA%E8%B3%BC%E8%87%AA%E5%88%86%E4%BA%AB/">自購自分享</a><span class="category-list-count">103</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -1061,7 +1061,7 @@ doDecrypt(passwd, onError);
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android-App/" style="font-size: 17.5px;">Android_App</a> <a href="/tags/BDISO/" style="font-size: 10.83px;">BDISO</a> <a href="/tags/BDMV/" style="font-size: 12.5px;">BDMV</a> <a href="/tags/Blu-ray/" style="font-size: 13.33px;">Blu-ray</a> <a href="/tags/CD/" style="font-size: 10.83px;">CD</a> <a href="/tags/CD-ReleaseDate/" style="font-size: 10px;">CD_ReleaseDate</a> <a href="/tags/Croixleur%CE%A3/" style="font-size: 10px;">CroixleurΣ</a> <a href="/tags/DJMAX-RESPECT/" style="font-size: 10px;">DJMAX_RESPECT</a> <a href="/tags/Free-2-Play/" style="font-size: 10px;">Free 2 Play</a> <a href="/tags/GuP/" style="font-size: 11.67px;">GuP</a> <a href="/tags/HATSUBOSHI-GAKUEN-THE-IDOLMASTER/" style="font-size: 14.17px;">HATSUBOSHI_GAKUEN_THE_IDOLMASTER</a> <a href="/tags/Hi-Res/" style="font-size: 19.17px;">Hi-Res</a> <a href="/tags/Hi-Res-ReleaseDate/" style="font-size: 10px;">Hi-Res_ReleaseDate</a> <a href="/tags/IDOLM-STER-CINDERELLA-MASTER/" style="font-size: 10.83px;">IDOLM@STER_CINDERELLA_MASTER</a> <a href="/tags/Kancolle/" style="font-size: 10px;">Kancolle</a> <a href="/tags/Love-Live/" style="font-size: 10px;">Love_Live!</a> <a href="/tags/Mobile-Game/" style="font-size: 16.67px;">Mobile_Game</a> <a href="/tags/OST/" style="font-size: 12.5px;">OST</a> <a href="/tags/OneDrive/" style="font-size: 10px;">OneDrive</a> <a href="/tags/PLATINUM-DEMO-%E2%80%93-FINAL-FANTASY-XV/" style="font-size: 10px;">PLATINUM DEMO – FINAL FANTASY XV</a> <a href="/tags/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/" style="font-size: 11.67px;">PS4隨手玩</a> <a href="/tags/PSN%E6%97%A5%E6%9C%8D/" style="font-size: 20px;">PSN日服</a> <a href="/tags/PSV-GAME/" style="font-size: 10px;">PSV_GAME</a> <a href="/tags/PSVita/" style="font-size: 10px;">PSVita</a> <a href="/tags/PlayStation/" style="font-size: 10.83px;">PlayStation</a> <a href="/tags/PlayStation-3/" style="font-size: 10px;">PlayStation 3</a> <a href="/tags/PlayStation-4/" style="font-size: 14.17px;">PlayStation 4</a> <a href="/tags/PlayStation-5/" style="font-size: 10.83px;">PlayStation 5</a> <a href="/tags/PlayStation-Portable/" style="font-size: 10px;">PlayStation Portable</a> <a href="/tags/PlayStation-Vita/" style="font-size: 10px;">PlayStation Vita</a> <a href="/tags/Playstation/" style="font-size: 10.83px;">Playstation</a> <a href="/tags/Playstation-3/" style="font-size: 10.83px;">Playstation 3</a> <a href="/tags/Playstation-4/" style="font-size: 13.33px;">Playstation 4</a> <a href="/tags/Playstation-5/" style="font-size: 10px;">Playstation 5</a> <a href="/tags/Playstation-Plus/" style="font-size: 20px;">Playstation Plus</a> <a href="/tags/Playstation-Portable/" style="font-size: 10.83px;">Playstation Portable</a> <a href="/tags/Playstation-Vita/" style="font-size: 13.33px;">Playstation Vita</a> <a href="/tags/SUPERBEAT-XONiC/" style="font-size: 10px;">SUPERBEAT_XONiC</a> <a href="/tags/Scan/" style="font-size: 10px;">Scan</a> <a href="/tags/THE-IDOLMASTER-SHINY-COLORS/" style="font-size: 15.83px;">THE_IDOLMASTER_SHINY_COLORS</a> <a href="/tags/Test/" style="font-size: 10.83px;">Test</a> <a href="/tags/U149/" style="font-size: 10px;">U149</a> <a href="/tags/Update-log/" style="font-size: 10px;">Update_log</a> <a href="/tags/Xenoblade/" style="font-size: 10px;">Xenoblade</a> <a href="/tags/Xenogears/" style="font-size: 10px;">Xenogears</a> <a href="/tags/androidapp/" style="font-size: 11.67px;">androidapp</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/dvd/" style="font-size: 10px;">dvd</a> <a href="/tags/gamehalo/" style="font-size: 10px;">gamehalo</a> <a href="/tags/gapps/" style="font-size: 10px;">gapps</a> <a href="/tags/googleplay/" style="font-size: 10px;">googleplay</a> <a href="/tags/iDOLM-STER/" style="font-size: 18.33px;">iDOLM@STER</a> <a href="/tags/iOS-App/" style="font-size: 16.67px;">iOS_App</a> <a href="/tags/im-s/" style="font-size: 10px;">im@s</a> <a href="/tags/iosapp/" style="font-size: 10.83px;">iosapp</a> <a href="/tags/webpage-game/" style="font-size: 10px;">webpage_game</a> <a href="/tags/%E3%81%93%E3%81%84%E3%81%8B%E3%81%9C-%E5%BD%A9/" style="font-size: 10px;">こいかぜ_-彩-</a> <a href="/tags/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC-%E3%83%97%E3%83%A9%E3%83%81%E3%83%8A%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%BA/" style="font-size: 10px;">アイドルマスター プラチナスターズ</a> <a href="/tags/%E3%82%A6%E3%83%9E%E5%A8%98-%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC/" style="font-size: 15px;">ウマ娘 プリティーダービー</a> <a href="/tags/%E3%83%87%E3%83%AC%E3%82%B9%E3%83%86/" style="font-size: 14.17px;">デレステ</a> <a href="/tags/%E5%81%B6%E5%83%8F%E5%A4%A7%E5%B8%AB-%E7%99%BD%E9%87%91%E6%98%9F%E5%85%89/" style="font-size: 10px;">偶像大師 白金星光</a> <a href="/tags/%E5%82%99%E4%BB%BD/" style="font-size: 10px;">備份</a> <a href="/tags/%E5%8A%A8%E6%84%9F%E6%96%B0%E6%97%B6%E4%BB%A3/" style="font-size: 10px;">动感新时代</a> <a href="/tags/%E5%AD%A6%E5%9C%92%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC/" style="font-size: 14.17px;">学園アイドルマスター</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 11.67px;">游戏</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">游戏机实用技术</a> <a href="/tags/%E9%99%90%E5%AE%9A%E7%89%88/" style="font-size: 10px;">限定版</a> <a href="/tags/%E9%9B%9C%E8%AB%87/" style="font-size: 10px;">雜談</a>
+      <a href="/tags/Android-App/" style="font-size: 17.69px;">Android_App</a> <a href="/tags/BDISO/" style="font-size: 10.77px;">BDISO</a> <a href="/tags/BDMV/" style="font-size: 12.31px;">BDMV</a> <a href="/tags/Blu-ray/" style="font-size: 13.08px;">Blu-ray</a> <a href="/tags/CD/" style="font-size: 10.77px;">CD</a> <a href="/tags/CD-ReleaseDate/" style="font-size: 10px;">CD_ReleaseDate</a> <a href="/tags/Croixleur%CE%A3/" style="font-size: 10px;">CroixleurΣ</a> <a href="/tags/DJMAX-RESPECT/" style="font-size: 10px;">DJMAX_RESPECT</a> <a href="/tags/Free-2-Play/" style="font-size: 10px;">Free 2 Play</a> <a href="/tags/GuP/" style="font-size: 11.54px;">GuP</a> <a href="/tags/HATSUBOSHI-GAKUEN-THE-IDOLMASTER/" style="font-size: 14.62px;">HATSUBOSHI_GAKUEN_THE_IDOLMASTER</a> <a href="/tags/Hi-Res/" style="font-size: 19.23px;">Hi-Res</a> <a href="/tags/Hi-Res-ReleaseDate/" style="font-size: 10px;">Hi-Res_ReleaseDate</a> <a href="/tags/IDOLM-STER-CINDERELLA-MASTER/" style="font-size: 10.77px;">IDOLM@STER_CINDERELLA_MASTER</a> <a href="/tags/Kancolle/" style="font-size: 10px;">Kancolle</a> <a href="/tags/Love-Live/" style="font-size: 10px;">Love_Live!</a> <a href="/tags/Mobile-Game/" style="font-size: 16.92px;">Mobile_Game</a> <a href="/tags/OST/" style="font-size: 12.31px;">OST</a> <a href="/tags/OneDrive/" style="font-size: 10px;">OneDrive</a> <a href="/tags/PLATINUM-DEMO-%E2%80%93-FINAL-FANTASY-XV/" style="font-size: 10px;">PLATINUM DEMO – FINAL FANTASY XV</a> <a href="/tags/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/" style="font-size: 11.54px;">PS4隨手玩</a> <a href="/tags/PSN%E6%97%A5%E6%9C%8D/" style="font-size: 20px;">PSN日服</a> <a href="/tags/PSV-GAME/" style="font-size: 10px;">PSV_GAME</a> <a href="/tags/PSVita/" style="font-size: 10px;">PSVita</a> <a href="/tags/PlayStation/" style="font-size: 10.77px;">PlayStation</a> <a href="/tags/PlayStation-3/" style="font-size: 10px;">PlayStation 3</a> <a href="/tags/PlayStation-4/" style="font-size: 13.85px;">PlayStation 4</a> <a href="/tags/PlayStation-5/" style="font-size: 10.77px;">PlayStation 5</a> <a href="/tags/PlayStation-Portable/" style="font-size: 10px;">PlayStation Portable</a> <a href="/tags/PlayStation-Vita/" style="font-size: 10px;">PlayStation Vita</a> <a href="/tags/Playstation/" style="font-size: 10.77px;">Playstation</a> <a href="/tags/Playstation-3/" style="font-size: 10.77px;">Playstation 3</a> <a href="/tags/Playstation-4/" style="font-size: 13.08px;">Playstation 4</a> <a href="/tags/Playstation-5/" style="font-size: 10px;">Playstation 5</a> <a href="/tags/Playstation-Plus/" style="font-size: 20px;">Playstation Plus</a> <a href="/tags/Playstation-Portable/" style="font-size: 10.77px;">Playstation Portable</a> <a href="/tags/Playstation-Vita/" style="font-size: 13.08px;">Playstation Vita</a> <a href="/tags/SUPERBEAT-XONiC/" style="font-size: 10px;">SUPERBEAT_XONiC</a> <a href="/tags/Scan/" style="font-size: 10px;">Scan</a> <a href="/tags/THE-IDOLMASTER-SHINY-COLORS/" style="font-size: 16.15px;">THE_IDOLMASTER_SHINY_COLORS</a> <a href="/tags/Test/" style="font-size: 10.77px;">Test</a> <a href="/tags/U149/" style="font-size: 10px;">U149</a> <a href="/tags/Update-log/" style="font-size: 10px;">Update_log</a> <a href="/tags/Xenoblade/" style="font-size: 10px;">Xenoblade</a> <a href="/tags/Xenogears/" style="font-size: 10px;">Xenogears</a> <a href="/tags/androidapp/" style="font-size: 11.54px;">androidapp</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/dvd/" style="font-size: 10px;">dvd</a> <a href="/tags/gamehalo/" style="font-size: 10px;">gamehalo</a> <a href="/tags/gapps/" style="font-size: 10px;">gapps</a> <a href="/tags/googleplay/" style="font-size: 10px;">googleplay</a> <a href="/tags/iDOLM-STER/" style="font-size: 18.46px;">iDOLM@STER</a> <a href="/tags/iOS-App/" style="font-size: 16.92px;">iOS_App</a> <a href="/tags/im-s/" style="font-size: 10px;">im@s</a> <a href="/tags/iosapp/" style="font-size: 10.77px;">iosapp</a> <a href="/tags/webpage-game/" style="font-size: 10px;">webpage_game</a> <a href="/tags/%E3%81%93%E3%81%84%E3%81%8B%E3%81%9C-%E5%BD%A9/" style="font-size: 10px;">こいかぜ_-彩-</a> <a href="/tags/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC-%E3%83%97%E3%83%A9%E3%83%81%E3%83%8A%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%BA/" style="font-size: 10px;">アイドルマスター プラチナスターズ</a> <a href="/tags/%E3%82%A6%E3%83%9E%E5%A8%98-%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC/" style="font-size: 15.38px;">ウマ娘 プリティーダービー</a> <a href="/tags/%E3%83%87%E3%83%AC%E3%82%B9%E3%83%86/" style="font-size: 13.85px;">デレステ</a> <a href="/tags/%E5%81%B6%E5%83%8F%E5%A4%A7%E5%B8%AB-%E7%99%BD%E9%87%91%E6%98%9F%E5%85%89/" style="font-size: 10px;">偶像大師 白金星光</a> <a href="/tags/%E5%82%99%E4%BB%BD/" style="font-size: 10px;">備份</a> <a href="/tags/%E5%8A%A8%E6%84%9F%E6%96%B0%E6%97%B6%E4%BB%A3/" style="font-size: 10px;">动感新时代</a> <a href="/tags/%E5%AD%A6%E5%9C%92%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC/" style="font-size: 14.62px;">学園アイドルマスター</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 11.54px;">游戏</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">游戏机实用技术</a> <a href="/tags/%E9%99%90%E5%AE%9A%E7%89%88/" style="font-size: 10px;">限定版</a> <a href="/tags/%E9%9B%9C%E8%AB%87/" style="font-size: 10px;">雜談</a>
     </div>
   </div>
 
@@ -1073,6 +1073,14 @@ doDecrypt(passwd, onError);
       <ul>
         <li>
           <center><p><strong>[只保留最近十天的消息]</strong></p></center>
+          <hr />
+          <hr />
+          <strong>2024-10-01</strong> 
+          <hr />
+          <blockquote>
+            <p><strong>發表</strong>：<a href="/2024/10/01/ps-plus-jpn/2024-10/">[PSN] PlayStation Plus 日服 二〇二四年 十月 會免游戲替換地址綜合文</a></p>
+            <p><strong>內容</strong>：更新PKG地址。</p>
+          </blockquote>
           <hr />
           <hr />
           <strong>2024-09-15</strong> 
@@ -1159,14 +1167,6 @@ doDecrypt(passwd, onError);
           <hr />
           <blockquote>
             <p><strong>發表</strong>：<a href="/2024/06/04/ps-plus-jpn/2024-06/">[PSN] PlayStation Plus 日服 二〇二四年 六月 會免游戲替換地址綜合文</a></p>
-            <p><strong>內容</strong>：更新PKG地址。</p>
-          </blockquote>
-          <hr />
-          <hr />
-          <strong>2024-05-07</strong> 
-          <hr />
-          <blockquote>
-            <p><strong>發表</strong>：<a href="/2024/05/07/ps-plus-jpn/2024-05/">[PSN] PlayStation Plus 日服 二〇二四年 五月 會免游戲替換地址綜合文</a></p>
             <p><strong>內容</strong>：更新PKG地址。</p>
           </blockquote>
           <hr />
