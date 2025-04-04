@@ -22,7 +22,6 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/wfhtony/pic-deploy-01/master/img/HTB1ZAyElTZmx1VjSZFGq6yx2XXaN.jpg">
 <meta name="twitter:creator" content="@wfhtony">
-<link rel="publisher" href="+wfhtony">
   
     <link rel="alternative" href="/atom.xml" title="wfhtony 的 個人收藏夾" type="application/atom+xml">
   
@@ -48,7 +47,7 @@
 <!-- End Google Analytics -->
 
   <!--<meta name="referrer" content="no-referrer" />-->
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 <body>
 <div id="container">
   <div id="wrap">
@@ -59,10 +58,6 @@
       <h1 id="logo-wrap">
         <a href="/" id="logo">wfhtony 的 個人收藏夾</a>
       </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">いらっしゃいませ～</a>
-        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -134,51 +129,66 @@
       
       <!-- Table of Contents -->
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><hr>
+        <hr>
 <p>稍微記一下大陸正常訪問OneDrive的一些東西…</p>
 <hr>
-<a id="more"></a>
-<p>因爲「onedrive.live.com」這個域名在大陸是被<a href="https://baike.baidu.com/item/DNS%E6%B1%A1%E6%9F%93" target="_blank" rel="noopener"><strong>DNS污染</strong></a>的，因此請在_hosts_中加上這段：</p>
+<span id="more"></span>
+<p>因爲「<a href="http://onedrive.live.com">onedrive.live.com</a>」這個域名在大陸是被<a href="https://baike.baidu.com/item/DNS%E6%B1%A1%E6%9F%93"><strong>DNS污染</strong></a>的，因此請在_hosts_中加上這段：</p>
 <blockquote>
-<pre><code>204.79.197.217 onedrive.live.com</code></pre></blockquote>
+<pre><code>204.79.197.217 onedrive.live.com
+</code></pre>
+</blockquote>
 <p>或者在路由器的_dnsmasq_中加上這段：</p>
 <blockquote>
-<pre><code>address=/onedrive.live.com/204.79.197.217</code></pre></blockquote>
+<pre><code>address=/onedrive.live.com/204.79.197.217
+</code></pre>
+</blockquote>
 <hr>
-<p>由於「onedrive.live.com」是屬於DNS解析出來只有一個IP的網站，因此只有一個IP可以用（即國外DNS主機解析出來的全是這個IP，國內解析出來的全是導到某些“不存在”的網站…）。</p>
-<p>如果上述_hosts_也不能上的話，<strong>請將「onedrive.live.com」這個域名拉入走代理的黑名單</strong><del>然後去怪阿三偷懶和網絡運營商</del>。</p>
+<p>由於「<a href="http://onedrive.live.com">onedrive.live.com</a>」是屬於DNS解析出來只有一個IP的網站，因此只有一個IP可以用（即國外DNS主機解析出來的全是這個IP，國內解析出來的全是導到某些“不存在”的網站…）。</p>
+<p>如果上述_hosts_也不能上的話，<strong>請將「<a href="http://onedrive.live.com">onedrive.live.com</a>」這個域名拉入走代理的黑名單</strong><del>然後去怪阿三偷懶和網絡運營商</del>。</p>
 <hr>
-<p>如果擔心下載、上傳會耗那啥賬號的流量的話，<strong>請將「1drv.com」、「onedrive.com」、「storage.live.com」這幾個域名</strong>拉入<strong>不走代理的白名單</strong>；<br>如果要提升OD的<strong>下載速度</strong>的話，請在_hosts_裏加上：</p>
+<p>如果擔心下載、上傳會耗那啥賬號的流量的話，<strong>請將「<a href="http://1drv.com">1drv.com</a>」、「<a href="http://onedrive.com">onedrive.com</a>」、「<a href="http://storage.live.com">storage.live.com</a>」這幾個域名</strong>拉入<strong>不走代理的白名單</strong>；<br>
+如果要提升OD的<strong>下載速度</strong>的話，請在_hosts_裏加上：</p>
 <blockquote>
 <pre><code>204.79.197.213 saalwa.by.files.1drv.com
 204.79.197.213 gv4bqa.by.files.1drv.com
 204.79.197.213 gv4aqa.by.files.1drv.com
-......等</code></pre></blockquote>
+......等
+</code></pre>
+</blockquote>
 <p>或者在_dnsmasq_上加上這行（dnsmasq支持泛域名）：</p>
 <blockquote>
-<pre><code>address=/.files.1drv.com/204.79.197.213</code></pre></blockquote>
-<p><a href="http://whois.domaintools.com/204.79.197.213" target="_blank" rel="noopener">204.79.197.213</a>這個IP應該是OD數據存儲相關的IP。<br><img src="https://raw.githubusercontent.com/wfhtony/pic-deploy-01/master/img/HTB1ZAyElTZmx1VjSZFGq6yx2XXaN.jpg" alt="從PING出來的結果來看速度還是蠻快的，估計在大陸有部署相應的節點。"><br><img src="https://raw.githubusercontent.com/wfhtony/pic-deploy-01/master/img/HTB10cC3SYPpK1RjSZFFq6y5PpXa4.jpg" alt="重定向后，在不使用代理的情況下，下載的速度明顯加快。"></p>
-<p>之前好像忘了說，具體的IP地址可以通過<a href="http://ping.chinaz.com/api.onedrive.com" target="_blank" rel="noopener">站長之家</a>等地方PING到，具體不再解釋。</p>
+<pre><code>address=/.files.1drv.com/204.79.197.213
+</code></pre>
+</blockquote>
+<p><a href="http://whois.domaintools.com/204.79.197.213">204.79.197.213</a>這個IP應該是OD數據存儲相關的IP。<br>
+<img src="https://raw.githubusercontent.com/wfhtony/pic-deploy-01/master/img/HTB1ZAyElTZmx1VjSZFGq6yx2XXaN.jpg" alt="從PING出來的結果來看速度還是蠻快的，估計在大陸有部署相應的節點。"><br>
+<img src="https://raw.githubusercontent.com/wfhtony/pic-deploy-01/master/img/HTB10cC3SYPpK1RjSZFFq6y5PpXa4.jpg" alt="重定向后，在不使用代理的情況下，下載的速度明顯加快。"></p>
+<p>之前好像忘了說，具體的IP地址可以通過<a href="http://ping.chinaz.com/api.onedrive.com">站長之家</a>等地方PING到，具體不再解釋。</p>
 <p><strong>上傳</strong>的話，同樣…</p>
 <blockquote>
 <pre><code>_dnsmasq_：
 address=/api.onedrive.com/204.79.197.213
 
 _hosts_：
-204.79.197.213 api.onedrive.com</code></pre></blockquote>
+204.79.197.213 api.onedrive.com
+</code></pre>
+</blockquote>
 <p><strong>網頁端看圖</strong>的話…</p>
 <blockquote>
 <pre><code>_dnsmasq_（泛域名）：
 address=/.storage.live.com/204.79.197.213
 
 _hosts_：
-204.79.197.213 by3302files.storage.live.com</code></pre></blockquote>
+204.79.197.213 by3302files.storage.live.com
+</code></pre>
+</blockquote>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2018/07/22/note-for-od_in_mainland/" data-id="clvcbvr9u000rxkv2683ng0f1" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2018/07/22/note-for-od_in_mainland/" data-id="cm92aqtfr001f3wv2a0ay3lru" class="article-share-link">Share</a>
       
 	  
       
@@ -217,7 +227,7 @@ _hosts_：
 
 <section id="comments">
   <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
 </section>
 
@@ -465,7 +475,7 @@ _hosts_：
         
         <p>-----</p>
         <p>PS：</p>
-        <p>Gitlab側如果有遇到頁面404的情況，<a href="https://raw.githubusercontent.com/wfhtony/pic-deploy-01/master/img/K1OrxmDPUi9asCw9mK3r.gif" target="_blank" rel="noopener">請手動把網址欄裏的日期往前推一天，再嘗試訪問。</a>（服務器端文章生成時區問題）</p>
+        <p>Gitlab側如果有遇到頁面404的情況，<a href="https://raw.githubusercontent.com/wfhtony/pic-deploy-01/master/img/K1OrxmDPUi9asCw9mK3r.gif">請手動把網址欄裏的日期往前推一天，再嘗試訪問。</a>（服務器端文章生成時區問題）</p>
       </ul>
     </div>
   </div>
