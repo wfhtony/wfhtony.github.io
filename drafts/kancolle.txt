@@ -1,0 +1,144 @@
+﻿<!--
+
+PSV版個人評價
+
+原文：[PSNINE](http://d7vg.com/psngame/9234)
+
+> 評分 **7**
+
+先打一下第一印象分好了（不談遊戲難度）。
+
++ 遊戲類型為SLG。
++ Live2D
++ 可以S/L（最多存5個存檔）
++ 系統方面有所革新（仔細看的話相比頁遊版，革新還不少）
++ 報錯娘有語音了（雖然只存在於教程之中）
++ 建造公式和頁遊版大體相同（1小時（頁遊）= 4天（本遊戲））。
++ 擴船位、擴修理槽、買戒指、買傢俱職人、買資源、買補給艦...等等，都不需要實際課金。
++ 無處不在的妖精 XD
+
+- 就算是玩過頁遊版，也需要一定時間上手。
+- UI...不談了 _(:3」∠)_
+- 戰鬥中艦娘是不會動的（戰鬥中沒有Live2D）
+- SE（Sound Effect）也有些...low
+- BUG（如开始的“Press Any Key”按下去后可能无反应，需要多按几下）
+- 掉帧。
+- 还是脸游。
+
+PS：存完档之后需要手动退出存档界面。
+PS2：由於運輸船系統，資源是不會隨著時間自然增長的。
+PS3：<s>戰鬥指令為預設的情況下可以參考各種頁遊版的攻略。</s> 周回繼承一定數量的船 = 變相鎖船
+PS4：游戏存在Game Over。
+
+适合人群：
+SLG游戏爱好者、
+能忍受如下画面的人：（[PPT在此](http://pan.baidu.com/s/1nurKEvR)（1.01））
+![](http://ww4.sinaimg.cn/large/5d880f2fgw1f0fnh7y3bzj211y0lcafj.jpg)
+想看到舰娘在母港里动起来的提督[mark]死宅[/mark]、
+想随时随地接触舰娘的提督[mark]死宅[/mark]、
+<s>勇者</s>。
+
+另：
+对于没有PSV的人来说，
+**千萬不要為了這款遊戲去買PSV**，
+也**千萬不要為了衣阿華去買這個遊戲**。
+
+<center>![](http://ww4.sinaimg.cn/large/6475aebajw1f3o89rznxcj20m80dc794.jpg)
+[color=grey]戰列艦衣阿華（Iowa）號現已作為2016春活E7通關獎勵實裝于頁遊版中。[/color]
+
+![](http://ww1.sinaimg.cn/large/6475aebajw1f3oeb3pfjej20m80dcjyx.jpg)
+[color=grey]于2016春活所实装的<s>所有</s>新船（旗舰除外）。[/color]</center>
+如果除了这款游戏以外没有别的PSV游戏吸引你的话，相信咱，你会后悔的。
+乖乖等安卓版就行了。
+
+PSP-100X：[mark]咱覺得咱要是不評，咱就對不起咱這頭像...[/mark]
+PSP-200X：這遊戲要是在14年發售的話口碑方面可能還有挽救的餘地...角川這延期兩年究竟是在幹什麼...
+PSP-300X：本游戏最新更新版本号：**1.02**，更新时间：**2016年3月10日**。
+PSP-N1000：Before：[mark]「金刚、鹿岛...都是我老婆~ 我要带着我的老婆制霸全海域，成为海〇王！」[/mark]
+PSP-E1000：After：[mark]「Oh! 謝特! **这特么不是XCOM吗？！**」[/mark]
+PSV-100X：[DMM 的定向爆破，DMM 向 twitter 申请要求屏蔽舰 C 游戏剧透图片](http://www.acgdoge.net/archives/8657)
+PSV-200X：[mark]**田中你媽飛了！！！**[/mark]
+PSV TV：<span style="background-color: #FFFFFF">頁遊版的話咱不建議新入坑的玩家去攻略這次的活動（2016春活），由於初期沒資源且這次活動對路基裝備的需求較大，故就算是打最低難度對於新人來說也是較為吃力的。</span>
+PS4.5：<span style="color: #FF0000;">**街機版啥時候移植到家用機上啊？**</span>
+PS[color=white]5[/color]：[color=white]咱過了艦改的一周目就不想打二周目了，心累。 [/color]
+
+另外付兩個PSV版的日站wiki可供之後的海域攻略作參考：
+http://wikiwiki.jp/kancollekai/
+http://速報最新ニュース.com/kouryakumenyu/20089/
+
+艦娘的各項資料可以到這裡進行對比(資料是頁遊版的，理論上與PSV版通用)：
+http://fleet.diablohu.com/ships/
+
+最后：
+![](http://ww3.sinaimg.cn/large/6475aebagw1f3v1swmz2dj20d302tglq.jpg)
+（来源：[Google+](https://plus.google.com/106169603685235886763/posts/ED2iJGxtkHB)）
+祝各位玩得愉快。
+
+
+***
+
+2014/01/27 第一次修改
+2014/01/28 第二次修改
+2014/01/30 第三次修改
+2014/04/08 第四次修改
+2014/04/30 第五次修改
+2014/06/11 第六次修改
+2014/08/07 第七次修改
+2014/08/28 第九次修改（別問咱第八次到哪裏去了）
+2015/01/14 第十次修改
+2015/01/16 第十一次修改
+2015/01/21 第十二次修改
+2015/01/22 第十三次修改
+2015/01/24 第十四次修改
+2015/01/27 第十五次修改
+2015/02/06 第十六次修改
+2015/02/13 第十七次修改
+2015/02/14 第十八次修改（FFF）
+2015/02/15 第十⑨次修改
+2015/02/26 第二十次修改
+2015/03/22 第二十一次修改
+2015/08/02 第二十二次修改 （Remastered）←簡直不要臉
+2015/08/03 第二十三次修改
+2015/08/26 第二十四次修改（田中飛媽不可避）
+
+<center>![](http://i.imgur.com/fQLQIcY.png)
+
+[![](http://i.imgur.com/XceORQH.png)](http://www.dmm.com/netgame/social/-/gadgets/=/app_id=854854/)
+↑ [進入遊戲（需日本IP）](http://www.dmm.com/netgame/social/-/gadgets/=/app_id=854854/)
+
+![](http://ww4.sinaimg.cn/large/6475aebagw1eonwxijt2dj20m80dc7b6.jpg)
+↑ 遊戲界面</center>
+
+<center>![](http://i.imgur.com/r0Hoy4L.png)
+↑ 遊戲界面 (舊)</center>
+
+ <span style="color: #3366ff;">關於官推：</span>
+
+<center>[![](http://ww1.sinaimg.cn/large/6475aebajw1eohgkmunc6j208901t74c.jpg)](https://twitter.com/KanColle_STAFF)
+
+</center>
+
+<del><span style="color: #3366ff;">立繪、BGM和角色語音的下載【自提】：</span></del>
+
+<del>【[鏈接A](http://pan.baidu.com/share/link?shareid=3316523153&amp;uk=4194697425)】</del>
+<del> 【[鏈接B](http://pan.baidu.com/share/link?shareid=3322790077&amp;uk=4194697425)（密碼：q65x）】</del>
+<del> PS：内有swf文件，文件内就是各式各樣的資源了（BG+BGM+立繪），</del>
+<del> 請自行尋找swf資源提取器。</del>
+<del> 内含自製**編號對照表**[【google docs】](http://goo.gl/lwKqoA)。</del>
+
+ <span style="color: #3366ff;">關於官方修改防作弊機制的原因（腦洞略大+語死早，請選擇性觀看）：</span>
+
+<font color="white">首先，不能否認，國内（大部分爲内地玩家）某些人作弊（死）是最大的原因。
+還有就是某些玩家對那邊的服務器造成了嚴重的負擔（瘋刷F5，代理經常掉綫之類的）。
+另外，這款遊戲本身就是日本限定，官方對日本國外的玩家的態度是睜隻眼閉隻眼。
+從某種意義上算是慷慨的了。
+如果某天封殺了絕大部分日本國外玩家，咱也不會感到特別奇怪。
+還有一個可能的原因是**歐美玩家的英化補丁**（ commiesubs.com/commie-kancolle-kantai-collection-english-patch ）。
+其原理就是先弄個服務器出來，裏面放上早就弄好的英化swf文件，
+然後將這個服務器映射到dmm那邊就行了（需要API，也就是咱們說的token值）。
+這的確是個不錯的方法，但官方好像不這麽認爲，畢竟影響了dmm那邊服務器的運作。
+咱在想，鑒于這遊戲在日本國外這麽有人氣，爲何不出官方英文版的呢？
+畢竟dmm有英文版，而且角川財大氣粗，
+更何況歐美老外對於亞洲文字的態度和咱們看阿拉伯文一樣看不懂啊= =</font> 
+
+-->
