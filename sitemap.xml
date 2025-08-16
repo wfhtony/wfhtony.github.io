@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.wfhtony.space/2019/12/28/imas-cgss/ost/</loc>
+    <loc>https://blog.wfhtony.space/2012/12/21/update_log/</loc>
     
     <lastmod>2025-08-16</lastmod>
     
@@ -11,9 +11,18 @@
   </url>
   
   <url>
-    <loc>https://blog.wfhtony.space/2012/12/21/update_log/</loc>
+    <loc>https://blog.wfhtony.space/2023/11/27/imas-cgss/video-s06/</loc>
     
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wfhtony.space/2019/12/28/imas-cgss/ost/</loc>
+    
+    <lastmod>2025-08-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1157,15 +1166,6 @@
     <loc>https://blog.wfhtony.space/2011/01/01/Sth.Secret/gkmas_1st-single/</loc>
     
     <lastmod>2025-05-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wfhtony.space/2023/11/27/imas-cgss/video-s06/</loc>
-    
-    <lastmod>2025-05-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
