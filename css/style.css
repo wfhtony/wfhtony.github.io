@@ -112,11 +112,16 @@ button::-moz-focus-inner {
   padding: 0;
 }
 @font-face {
-  font-family: FontAwesome;
+  font-family: "Font Awesome 6 Free";
   font-style: normal;
   font-weight: normal;
-  src: url("fonts/fontawesome-webfont.eot?v=#4.6.3");
-  src: url("fonts/fontawesome-webfont.eot?#iefix&v=#4.6.3") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff?v=#4.6.3") format("woff"), url("fonts/fontawesome-webfont.ttf?v=#4.6.3") format("truetype"), url("fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.6.3") format("svg");
+  src: url("fonts/fa-solid-900.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/fa-brands-400.woff2") format("woff2");
 }
 html,
 body,
@@ -484,7 +489,7 @@ body {
   filter: none;
 }
 .nav-icon {
-  font-family: FontAwesome;
+  font-family: "Font Awesome 6 Free";
   text-align: center;
   font-size: 14px;
   width: 14px;
@@ -518,21 +523,27 @@ body {
   margin-right: -15px;
 }
 #nav-github:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f09b";
 }
 #nav-weibo:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f18a";
 }
 #nav-twitter:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f099";
 }
 #nav-gplus:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f0d5";
 }
 #nav-gplus_square:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f0d4";
 }
 #nav-lastfm:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f202";
 }
 #nav-paper-plane_tr:before {
@@ -541,8 +552,21 @@ body {
 #nav-paper-plane:before {
   content: "\f1d8";
 }
+#nav-telegram:before {
+  font-family: "Font Awesome 6 Brands";
+  content: "\f2c6";
+}
+#nav-discord:before {
+  font-family: "Font Awesome 6 Brands";
+  content: "\f392";
+}
 #nav-steam:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f1b6";
+}
+#nav-mastodon:before {
+  font-family: "Font Awesome 6 Brands";
+  content: "\f4f6";
 }
 #nav-mastodon-plus:before {
   content: "\f0fe";
@@ -608,7 +632,7 @@ body {
   top: 50%;
   right: 10px;
   margin-top: -7px;
-  font: 13px FontAwesome;
+  font: 13px "Font Awesome 6 Free";
   border: none;
   background: none;
   color: #bbb;
@@ -846,7 +870,7 @@ a.article-title:hover {
 }
 .article-comment-link:before {
   content: "\f075";
-  font-family: FontAwesome;
+  font-family: "Font Awesome 6 Free";
   padding-right: 8px;
 }
 .article-share-link {
@@ -856,7 +880,7 @@ a.article-title:hover {
 }
 .article-share-link:before {
   content: "\f064";
-  font-family: FontAwesome;
+  font-family: "Font Awesome 6 Free";
   padding-right: 6px;
 }
 #article-nav {
@@ -1008,7 +1032,7 @@ a.article-title:hover {
 .article-share-pinterest:before,
 .article-share-google:before {
   font-size: 20px;
-  font-family: FontAwesome;
+  font-family: "Font Awesome 6 Free";
   width: 20px;
   height: 20px;
   position: absolute;
@@ -1030,6 +1054,7 @@ a.article-title:hover {
   color: #fff;
 }
 .article-share-weibo:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f18a";
 }
 .article-share-weibo:hover {
@@ -1037,6 +1062,7 @@ a.article-title:hover {
   text-shadow: 0 1px #b02f26;
 }
 .article-share-weixin:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f1d7";
 }
 .article-share-weixin:hover {
@@ -1044,6 +1070,7 @@ a.article-title:hover {
   text-shadow: 0 1px #2d8a48;
 }
 .article-share-qq:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f1d6";
 }
 .article-share-qq:hover {
@@ -1051,6 +1078,7 @@ a.article-title:hover {
   text-shadow: 0 1px #1d96c5;
 }
 .article-share-renren:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f18b";
 }
 .article-share-renren:hover {
@@ -1065,6 +1093,7 @@ a.article-title:hover {
   text-shadow: 0 1px #292929;
 }
 .article-share-twitter:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f099";
 }
 .article-share-twitter:hover {
@@ -1072,6 +1101,7 @@ a.article-title:hover {
   text-shadow: 0 1px #008abe;
 }
 .article-share-facebook:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f09a";
 }
 .article-share-facebook:hover {
@@ -1079,6 +1109,7 @@ a.article-title:hover {
   text-shadow: 0 1px #2f477a;
 }
 .article-share-pinterest:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f0d2";
 }
 .article-share-pinterest:hover {
@@ -1086,6 +1117,7 @@ a.article-title:hover {
   text-shadow: 0 1px #a21a1f;
 }
 .article-share-google:before {
+  font-family: "Font Awesome 6 Brands";
   content: "\f0d5";
 }
 .article-share-google:hover {
