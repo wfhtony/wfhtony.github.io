@@ -26,11 +26,11 @@
 }
 
 .spoiler.collapsed .spoiler-title:before {
-    content: "Show ";
+    content: none;
 }
 
 .spoiler.expanded .spoiler-title:before {
-    content: "Hide ";
+    content: none;
 }
 
 .spoiler .spoiler-content {

@@ -695,6 +695,9 @@ a.article-title:hover {
   zoom: 1;
   color: #b5b5b5;
   padding: 0 20px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 .article-entry:before,
 .article-entry:after {
@@ -749,20 +752,30 @@ a.article-title:hover {
 }
 .article-entry iframe {
   border: none;
+  max-width: 100%;
+}
+.article-entry .bili_video iframe {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  aspect-ratio: 16/9;
 }
 .article-entry table {
   width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
+  max-width: 100%;
+  display: block;
+  overflow-x: auto;
+  border-spacing: 0 0;
+  -webkit-overflow-scrolling: touch;
 }
 .article-entry th {
   font-weight: bold;
   border-bottom: 3px solid #2f2f2f;
-  padding-bottom: 0.5em;
+  padding: 0 6px 0.5em;
 }
 .article-entry td {
   border-bottom: 1px solid #2f2f2f;
-  padding: 10px 0;
+  padding: 10px 6px;
 }
 .article-entry blockquote {
   font-family: "Droid Serif", Georgia, Serif;
@@ -1173,6 +1186,53 @@ a.article-title:hover {
   border-radius: 5px;
   -webkit-box-shadow: 0 0 3px #3d3d3d;
   box-shadow: 0 0 3px #3d3d3d;
+}
+#enc_passwd {
+  margin: 1.6em 0;
+  padding: 0px 3px;
+  border-radius: 3px;
+  background: #1f1f1f;
+  -webkit-box-shadow: 1px 2px 3px #242424;
+  box-shadow: 1px 2px 3px #242424;
+}
+#enc_pwd_input,
+.enc-pwd-input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  height: 30px;
+  padding: 0 8px;
+  font-size: 102%;
+  color: #e0e0e0;
+  background: #2a2a2a;
+  border: 1px solid #555;
+  border-radius: 4px;
+  outline: none;
+}
+#enc_pwd_input:focus,
+.enc-pwd-input:focus {
+  border-color: #e32d40;
+  -webkit-box-shadow: 0 0 4px rgba(227,45,64,0.35);
+  box-shadow: 0 0 4px rgba(227,45,64,0.35);
+}
+.enc-dec-btn {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 58px;
+  height: 32px;
+  margin-left: 6px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background: #3a3a3a;
+  color: #e0e0e0;
+  cursor: pointer;
+}
+.enc-dec-btn:hover {
+  background: #e32d40;
+  border-color: #e32d40;
+  color: #fff;
 }
 #comments {
   background: #1f1f1f;
@@ -1618,6 +1678,8 @@ a.article-title:hover {
 .article-entry .highlight table {
   margin: 0;
   width: auto;
+  display: table;
+  border-spacing: 0;
 }
 .article-entry .highlight td {
   border: none;

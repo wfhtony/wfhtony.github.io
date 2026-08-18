@@ -1,8 +1,18 @@
 (function (document) {
-    [].forEach.call(document.getElementsByClassName('spoiler'), function(panel) {
-        panel.getElementsByClassName('spoiler-title')[0].onclick = function() {
-            panel.classList.toggle("collapsed");
-            panel.classList.toggle("expanded");
+  'use strict';
+  function handleClick(e) {
+    var node = e.target;
+    while (node && node !== document) {
+      if (node.classList && node.classList.contains('spoiler-title')) {
+        var panel = node.parentNode;
+        if (panel && panel.classList && panel.classList.contains('spoiler')) {
+          panel.classList.toggle('collapsed');
+          panel.classList.toggle('expanded');
         }
-    });
+        return;
+      }
+      node = node.parentNode;
+    }
+  }
+  document.addEventListener('click', handleClick, false);
 })(document);
