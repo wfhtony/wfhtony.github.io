@@ -1246,6 +1246,13 @@ a.article-title:hover {
 #comments a {
   color: #e32d40;
 }
+#comments #disqus_thread iframe[src*="/ads-iframe/"],
+#comments #disqus_thread iframe[src*="tempest.services.disqus.com"] {
+  display: none !important;
+}
+#comments #disqus_recommendations {
+  display: none !important;
+}
 .archives-wrap {
   margin: 50px 0;
 }
