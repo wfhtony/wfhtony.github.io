@@ -146,8 +146,16 @@
     });
   });
 
-  if ($.fancybox){
-    $('.fancybox').fancybox();
+  // 圖片彈窗（img-viewer.js）以事件委派接管 .article-entry 圖片的點擊，
+  // 因此不再初始化舊版 fancybox。
+  var viewerCfg = window.IMG_VIEWER || {};
+
+  // open_in_new_tab 模式：不載入彈窗，直接開新分頁（無 JS 也能運作）
+  if (viewerCfg.open_in_new_tab){
+    $('.article-entry a.fancybox, .article-gallery a.fancybox').attr({
+      target: '_blank',
+      rel: 'noopener'
+    });
   }
 
   // Mobile nav
