@@ -62,6 +62,7 @@
   var lastFocus = null;
   var rafId = 0;
   var scrollbarPad = 0;
+  var savedScrollY = 0;
 
   var activePointers = [];
   var dragState = null;
@@ -286,11 +287,17 @@
   // 鎖捲動時補回 scrollbar 寬度，避免背景頁面水平位移
   function lockScroll(on) {
     if (on) {
+      savedScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
       scrollbarPad = vw() - document.documentElement.clientWidth;
       if (scrollbarPad > 0) document.body.style.paddingRight = scrollbarPad + 'px';
     } else {
       document.body.style.paddingRight = '';
       scrollbarPad = 0;
+      // 保險：萬一鎖定／解鎖過程中瀏覽器把捲動位置歸零，補回原位
+      if (savedScrollY > 0 &&
+          (window.pageYOffset || document.documentElement.scrollTop || 0) === 0) {
+        window.scrollTo(0, savedScrollY);
+      }
     }
   }
 

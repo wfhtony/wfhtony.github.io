@@ -130,8 +130,13 @@
   });
 
   // Caption
-  $('.article-entry').each(function(i){
-    $(this).find('img').each(function(){
+  // 加密文章（hexo-encrypt）的內容是解密後才注入 DOM；這段若只在 DOM ready 跑一次，
+  // 解密後才出現的圖片就不會有 caption / fancybox 外框。因此抽成函式，並用
+  // MutationObserver 補處理後續才被加進 .article-entry 的圖片。
+  function decorateArticleEntry(entry, rel){
+    var $entry = $(entry);
+
+    $entry.find('img').each(function(){
       if ($(this).parent().hasClass('fancybox')) return;
 
       var alt = this.alt;
@@ -141,10 +146,45 @@
       $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
     });
 
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
+    $entry.find('.fancybox').each(function(){
+      $(this).attr('rel', rel);
     });
+  }
+
+  var $entries = $('.article-entry');
+
+  $entries.each(function(i){
+    decorateArticleEntry(this, 'article' + i);
   });
+
+  if (window.MutationObserver){
+    var captionObserver = new MutationObserver(function(mutations){
+      var entries = [];
+
+      for (var i = 0; i < mutations.length; i++){
+        var added = mutations[i].addedNodes;
+
+        for (var j = 0; j < added.length; j++){
+          var node = added[j];
+
+          if (node.nodeType !== 1 || !node.closest) continue;
+
+          var entry = node.closest('.article-entry');
+
+          if (entry && entries.indexOf(entry) === -1) entries.push(entry);
+        }
+      }
+
+      for (var k = 0; k < entries.length; k++){
+        var index = $entries.index(entries[k]);
+        decorateArticleEntry(entries[k], 'article' + (index < 0 ? 0 : index));
+      }
+    });
+
+    $entries.each(function(){
+      captionObserver.observe(this, { childList: true, subtree: true });
+    });
+  }
 
   // 圖片彈窗（img-viewer.js）以事件委派接管 .article-entry 圖片的點擊，
   // 因此不再初始化舊版 fancybox。

@@ -197,6 +197,7 @@ body {
 }
 .article-date,
 .article-category-link,
+.article-entry .footnotes-group-title,
 .archive-year,
 .widget-title {
   text-decoration: none;
@@ -784,6 +785,14 @@ a.article-title:hover {
   border-left: 4px solid #5d5d5d;
   color: #b5b5b5;
 }
+.article-entry blockquote img,
+.article-entry blockquote video {
+  margin-left: 0;
+  margin-right: auto;
+}
+.article-entry blockquote .caption {
+  text-align: left;
+}
 .article-entry blockquote footer {
   font-size: 14px;
   margin: 1.6em 0;
@@ -1159,6 +1168,9 @@ a.article-title:hover {
   max-width: 100%;
   margin: 0 auto;
 }
+.article-entry .footnote-item[id^="fn-"] {
+  list-style: none;
+}
 .toc-article {
   background: #243043;
   border-radius: 5px;
@@ -1192,9 +1204,6 @@ html.img-viewer-ready .article-gallery-photos img {
   cursor: zoom-in;
 }
 html.img-viewer-open {
-  overflow: hidden;
-}
-html.img-viewer-open body {
   overflow: hidden;
 }
 .img-viewer {
