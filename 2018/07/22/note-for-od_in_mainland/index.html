@@ -135,7 +135,7 @@
 <p>稍微記一下大陸正常訪問OneDrive的一些東西…</p>
 <hr>
 <span id="more"></span>
-<p>因爲「<a href="http://onedrive.live.com">onedrive.live.com</a>」這個域名在大陸是被<a href="https://baike.baidu.com/item/DNS%E6%B1%A1%E6%9F%93"><strong>DNS污染</strong></a>的，因此請在_hosts_中加上這段：</p>
+<p>因爲「<a target="_blank" rel="noopener" href="http://onedrive.live.com">onedrive.live.com</a>」這個域名在大陸是被<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/DNS%E6%B1%A1%E6%9F%93"><strong>DNS污染</strong></a>的，因此請在_hosts_中加上這段：</p>
 <blockquote>
 <pre><code>204.79.197.217 onedrive.live.com
 </code></pre>
@@ -146,10 +146,10 @@
 </code></pre>
 </blockquote>
 <hr>
-<p>由於「<a href="http://onedrive.live.com">onedrive.live.com</a>」是屬於DNS解析出來只有一個IP的網站，因此只有一個IP可以用（即國外DNS主機解析出來的全是這個IP，國內解析出來的全是導到某些“不存在”的網站…）。</p>
-<p>如果上述_hosts_也不能上的話，<strong>請將「<a href="http://onedrive.live.com">onedrive.live.com</a>」這個域名拉入走代理的黑名單</strong><del>然後去怪阿三偷懶和網絡運營商</del>。</p>
+<p>由於「<a target="_blank" rel="noopener" href="http://onedrive.live.com">onedrive.live.com</a>」是屬於DNS解析出來只有一個IP的網站，因此只有一個IP可以用（即國外DNS主機解析出來的全是這個IP，國內解析出來的全是導到某些“不存在”的網站…）。</p>
+<p>如果上述_hosts_也不能上的話，<strong>請將「<a target="_blank" rel="noopener" href="http://onedrive.live.com">onedrive.live.com</a>」這個域名拉入走代理的黑名單</strong><del>然後去怪阿三偷懶和網絡運營商</del>。</p>
 <hr>
-<p>如果擔心下載、上傳會耗那啥賬號的流量的話，<strong>請將「<a href="http://1drv.com">1drv.com</a>」、「<a href="http://onedrive.com">onedrive.com</a>」、「<a href="http://storage.live.com">storage.live.com</a>」這幾個域名</strong>拉入<strong>不走代理的白名單</strong>；<br>
+<p>如果擔心下載、上傳會耗那啥賬號的流量的話，<strong>請將「<a target="_blank" rel="noopener" href="http://1drv.com">1drv.com</a>」、「<a target="_blank" rel="noopener" href="http://onedrive.com">onedrive.com</a>」、「<a target="_blank" rel="noopener" href="http://storage.live.com">storage.live.com</a>」這幾個域名</strong>拉入<strong>不走代理的白名單</strong>；<br>
 如果要提升OD的<strong>下載速度</strong>的話，請在_hosts_裏加上：</p>
 <blockquote>
 <pre><code>204.79.197.213 saalwa.by.files.1drv.com
@@ -163,10 +163,10 @@
 <pre><code>address=/.files.1drv.com/204.79.197.213
 </code></pre>
 </blockquote>
-<p><a href="http://whois.domaintools.com/204.79.197.213">204.79.197.213</a>這個IP應該是OD數據存儲相關的IP。<br>
+<p><a target="_blank" rel="noopener" href="http://whois.domaintools.com/204.79.197.213">204.79.197.213</a>這個IP應該是OD數據存儲相關的IP。<br>
 <img src="https://raw.githubusercontent.com/wfhtony/pic-deploy-01/master/img/HTB1ZAyElTZmx1VjSZFGq6yx2XXaN.jpg" alt="從PING出來的結果來看速度還是蠻快的，估計在大陸有部署相應的節點。"><br>
 <img src="https://raw.githubusercontent.com/wfhtony/pic-deploy-01/master/img/HTB10cC3SYPpK1RjSZFFq6y5PpXa4.jpg" alt="重定向后，在不使用代理的情況下，下載的速度明顯加快。"></p>
-<p>之前好像忘了說，具體的IP地址可以通過<a href="http://ping.chinaz.com/api.onedrive.com">站長之家</a>等地方PING到，具體不再解釋。</p>
+<p>之前好像忘了說，具體的IP地址可以通過<a target="_blank" rel="noopener" href="http://ping.chinaz.com/api.onedrive.com">站長之家</a>等地方PING到，具體不再解釋。</p>
 <p><strong>上傳</strong>的話，同樣…</p>
 <blockquote>
 <pre><code>_dnsmasq_：
@@ -190,7 +190,7 @@ _hosts_：
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2018/07/22/note-for-od_in_mainland/" data-id="cmuy9e9ex003hzwv29fw39uy7" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2018/07/22/note-for-od_in_mainland/" data-id="cmuyahlaq001k50v2d7eoe5eu" class="article-share-link">Share</a>
       
 	  
       
@@ -536,6 +536,15 @@ _hosts_：
 
 
 <script src="/js/img-viewer.js"></script>
+
+
+
+<!-- 正文連結行為（外部連結新分頁 + YouTube/Bilibili/niconico 播放浮窗） -->
+
+
+<script>window.POST_LINKS = {"new_tab":true,"media_viewer":true,"autoplay":false};</script>
+
+<script src="/js/post-links.js"></script>
 
 
 
