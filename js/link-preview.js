@@ -177,17 +177,32 @@
     return n;
   }
 
+  /* 0 小數位的幣別（不要顯示 .00） */
+  var ZERO_DECIMAL = { JPY: 1, TWD: 1, KRW: 1, VND: 1, CLP: 1, ISK: 1 };
+
+  /* 金額格式化（依幣別決定小數位與符號） */
   function yen(price) {
     if (!price || !price.amount) return '';
-    var n = Number(price.amount).toLocaleString('ja-JP');
-    var sym = price.currency === 'JPY' ? '\u00A5' : (price.currency ? price.currency + ' ' : '');
-    return sym + n;
+    var n = Number(price.amount);
+    if (!isFinite(n)) return '';
+    var cur = price.currency || 'JPY';
+    var d = ZERO_DECIMAL[cur] ? 0 : 2;
+    try {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: cur,
+        minimumFractionDigits: d,
+        maximumFractionDigits: d
+      }).format(n);
+    } catch (e) {
+      return cur + ' ' + n.toLocaleString('en-US');
+    }
   }
 
   /* ------------------------------------------------------------ 卡片 DOM */
 
   var card, chipDot, platName, typeBadge, tagWrap, qualityEl, priceEl;
-  var bodyEl, coverBox, coverImg, titleEl, artistEl, metaEl, noteEl;
+  var bodyEl, coverBox, coverImg, titleEl, artistEl, metaEl, pricesWrap, noteEl;
   var tracksWrap, tracksToggle, trackList, tracksEmpty;
   var embedWrap;
   var openLink, embedBtn;
@@ -232,11 +247,14 @@
     titleEl = el('div', 'lp-title');
     artistEl = el('div', 'lp-artist');
     metaEl = el('div', 'lp-meta');
+    pricesWrap = el('div', 'lp-prices');
+    pricesWrap.hidden = true;
     noteEl = el('div', 'lp-note');
     noteEl.hidden = true;
     info.appendChild(titleEl);
     info.appendChild(artistEl);
     info.appendChild(metaEl);
+    info.appendChild(pricesWrap);
     info.appendChild(noteEl);
     bodyEl.appendChild(coverBox);
     bodyEl.appendChild(info);
@@ -303,6 +321,8 @@
     qualityEl.removeAttribute('title');
     noteEl.hidden = true;
     noteEl.textContent = '';
+    pricesWrap.hidden = true;
+    pricesWrap.innerHTML = '';
   }
 
   /* ------------------------------------------------------------- 渲染 */
@@ -327,6 +347,33 @@
       priceEl.appendChild(document.createTextNode(yen(price)));
     }
     if (price.note) priceEl.appendChild(document.createTextNode(' · ' + price.note));
+  }
+
+  /* 各地區價格（Steam 可設定多個 cc）→ 一排小 chips；只有一個地區時不顯示 */
+  function renderPrices(entry) {
+    pricesWrap.innerHTML = '';
+    var list = entry.prices || [];
+    if (list.length < 2) {
+      pricesWrap.hidden = true;
+      return;
+    }
+    pricesWrap.hidden = false;
+    pricesWrap.appendChild(el('span', 'lp-prices-label', '\u5404\u5340\u50F9\u683C')); // 各區價格
+    for (var i = 0; i < list.length; i++) {
+      var p = list[i];
+      var chip = el('span', 'lp-price-item');
+      if (p.region) chip.appendChild(el('span', 'lp-price-region', p.region));
+      chip.appendChild(el('span', 'lp-price-amt', yen(p)));
+      var was = Number(p.original);
+      if (was > Number(p.amount)) {
+        var pct = Number(p.discount) > 0
+          ? Number(p.discount)
+          : Math.round((1 - Number(p.amount) / was) * 100);
+        if (pct > 0) chip.appendChild(el('span', 'lp-price-off', '-' + pct + '%'));
+        chip.title = '原價 ' + yen({ amount: was, currency: p.currency });
+      }
+      pricesWrap.appendChild(chip);
+    }
   }
 
   function renderRich(entry, key, link) {
@@ -368,6 +415,7 @@
     }
 
     renderPrice(entry.price);
+    renderPrices(entry);
 
     if (entry.cover) {
       coverBox.hidden = false;

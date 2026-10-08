@@ -2111,6 +2111,70 @@ html.media-viewer-open {
   font-weight: 400;
   color: #999;
 }
+.lp-prices {
+  margin-top: 6px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  gap: 4px;
+}
+.lp-prices[hidden] {
+  display: none;
+}
+.lp-prices-label {
+  font-size: 10px;
+  color: #999;
+}
+.lp-price-item {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-box;
+  display: inline-flex;
+  -webkit-box-align: baseline;
+  -moz-box-align: baseline;
+  -o-box-align: baseline;
+  -ms-flex-align: baseline;
+  -webkit-align-items: baseline;
+  align-items: baseline;
+  gap: 3px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  color: #e6e6e6;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.lp-price-region {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #999;
+}
+.lp-price-amt {
+  font-weight: 700;
+}
+.lp-price-off {
+  font-size: 10px;
+  color: #8bd450;
+}
 .lp-body {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
