@@ -58,7 +58,13 @@
     { suffix: 'store.steampowered.com', key: 'steam', name: 'Steam', color: '#66c0f4' },
     { suffix: 's.team', key: 'steam', name: 'Steam', color: '#66c0f4' },
     { suffix: 'xbox.com', key: 'xbox', name: 'Xbox', color: '#107c10' },
-    { suffix: 'play.google.com', key: 'gplay', name: 'Google Play', color: '#01875f' }
+    { suffix: 'play.google.com', key: 'gplay', name: 'Google Play', color: '#01875f' },
+    // 直播／活動售票（順序要緊：intl.stagecrowd.live 要在 stagecrowd.live 之前）
+    { suffix: 'asobistage.asobistore.jp', key: 'asobistage', name: 'ASOBI STAGE', color: '#e5007f' },
+    { suffix: 'abema.tv', key: 'abema', name: 'ABEMA', color: '#16a34a' },
+    { suffix: 'intl.stagecrowd.live', key: 'stagecrowd-intl', name: 'Stagecrowd (Intl)', color: '#7c3aed' },
+    { suffix: 'stagecrowd.live', key: 'stagecrowd', name: 'Stagecrowd', color: '#7c3aed' },
+    { suffix: 'l-tike.zaiko.io', key: 'zaiko', name: 'ZAIKO', color: '#0ea5e9' }
   ];
 
   /* itunes.apple.com 上的 App Store 連結（/jp/app/…）要用 App Store 的身分顯示 */
@@ -349,20 +355,34 @@
     if (price.note) priceEl.appendChild(document.createTextNode(' · ' + price.note));
   }
 
-  /* 各地區價格（Steam 可設定多個 cc）→ 一排小 chips；只有一個地區時不顯示 */
+  /* 各地區價格（Steam 多 cc）／票種（活動）→ 一排小 chips */
   function renderPrices(entry) {
     pricesWrap.innerHTML = '';
     var list = entry.prices || [];
-    if (list.length < 2) {
+    var isTicket = entry.pricesKind === 'ticket';
+    // 票種即使只有一種也列出來（票種名稱本身就是資訊）；地區價格只有一種就不用重複
+    if (!list.length || (list.length < 2 && !isTicket)) {
       pricesWrap.hidden = true;
       return;
     }
     pricesWrap.hidden = false;
-    pricesWrap.appendChild(el('span', 'lp-prices-label', '\u5404\u5340\u50F9\u683C')); // 各區價格
+    pricesWrap.appendChild(
+      el('span', 'lp-prices-label', isTicket ? '\u7968\u7A2E' : '\u5404\u5340\u50F9\u683C')
+    ); // 票種 / 各區價格
     for (var i = 0; i < list.length; i++) {
       var p = list[i];
       var chip = el('span', 'lp-price-item');
-      if (p.region) chip.appendChild(el('span', 'lp-price-region', p.region));
+      var tips = [];
+      var tag = p.region || p.label;
+      if (tag) {
+        var full = String(tag);
+        var short = full;
+        if (short.length > 26) {
+          short = short.slice(0, 25) + '\u2026';
+          tips.push(full);
+        }
+        chip.appendChild(el('span', 'lp-price-region', short));
+      }
       chip.appendChild(el('span', 'lp-price-amt', yen(p)));
       var was = Number(p.original);
       if (was > Number(p.amount)) {
@@ -370,8 +390,10 @@
           ? Number(p.discount)
           : Math.round((1 - Number(p.amount) / was) * 100);
         if (pct > 0) chip.appendChild(el('span', 'lp-price-off', '-' + pct + '%'));
-        chip.title = '原價 ' + yen({ amount: was, currency: p.currency });
+        tips.push('原價 ' + yen({ amount: was, currency: p.currency }));
       }
+      if (p.note) chip.appendChild(el('span', 'lp-price-note', p.note));
+      if (tips.length) chip.title = tips.join(' \u00B7 ');
       pricesWrap.appendChild(chip);
     }
   }
@@ -388,13 +410,15 @@
     var kind = entry.kind || 'music';
     var isGoods = kind === 'goods';
     var isGame = kind === 'game';
-    var flat = isGoods || isGame; // 商品／遊戲：不顯示音質，也不顯示曲目區塊
+    var isEvent = kind === 'event';
+    var flat = isGoods || isGame || isEvent; // 商品／遊戲／活動：不顯示音質，也不顯示曲目區塊
     typeBadge.hidden = false;
-    typeBadge.textContent = isGame ? '遊戲' : isGoods ? '商品'
+    typeBadge.textContent = isGame ? '遊戲' : isGoods ? '商品' : isEvent ? '活動'
       : (entry.type === 'stream' ? '串流' : '購買');
     typeBadge.className = 'lp-type ' +
       (isGame ? 'lp-type-game'
         : isGoods ? 'lp-type-goods'
+        : isEvent ? 'lp-type-event'
         : (entry.type === 'stream' ? 'lp-type-stream' : 'lp-type-purchase'));
 
     // 遊戲平臺標籤（Switch 2 / PS5 / Windows…）
@@ -439,16 +463,22 @@
     metaEl.textContent = metaBits.join(' · ');
     metaEl.hidden = metaBits.length === 0;
 
-    // 已下架／抓不到：內容保留，加一行小字提示（若來自 Wayback 快照則標明來源）
+    // 已下架／抓不到：內容保留，加一行小字提示（依來源標明是 Web Archive 還是本機保存的快照）
     if (entry.archive) {
       var ts = String(entry.archive.timestamp || '');
-      var snapDate = ts.length >= 8
-        ? ts.slice(0, 4) + '-' + ts.slice(4, 6) + '-' + ts.slice(6, 8)
-        : '';
+      // Wayback 是 14 位數字（20251205094230），本機快照是 ISO（2026-06-23T14:20:00Z）
+      var snapDate = '';
+      if (/^\d{14}/.test(ts)) {
+        snapDate = ts.slice(0, 4) + '-' + ts.slice(4, 6) + '-' + ts.slice(6, 8);
+      } else if (/^\d{4}-\d{2}-\d{2}/.test(ts)) {
+        snapDate = ts.slice(0, 10);
+      }
+      var fromWayback = entry.archive.source === 'wayback';
       noteEl.hidden = false;
-      noteEl.textContent = '\u26A0 商店已下架／無法取得，以下資料來自 Web Archive 快照' +
+      noteEl.textContent = '\u26A0 商店已下架／無法取得，以下資料來自' +
+        (fromWayback ? 'Web Archive 快照' : '保存的網頁快照') +
         (snapDate ? '（' + snapDate + '）' : '');
-      if (/^https:\/\/web\.archive\.org\//.test(entry.archive.url || '')) {
+      if (fromWayback && /^https:\/\/web\.archive\.org\//.test(entry.archive.url || '')) {
         var alink = el('a', 'lp-note-link', '查看快照');
         alink.href = entry.archive.url;
         alink.target = '_blank';

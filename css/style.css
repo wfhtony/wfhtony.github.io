@@ -1997,6 +1997,11 @@ html.media-viewer-open {
   background: rgba(255,168,208,0.12);
   border: 1px solid rgba(255,168,208,0.3);
 }
+.lp-type.lp-type-event {
+  color: #ffc48f;
+  background: rgba(255,196,143,0.12);
+  border: 1px solid rgba(255,196,143,0.3);
+}
 .lp-tags {
   display: -webkit-inline-box;
   display: -moz-inline-box;
@@ -2137,6 +2142,13 @@ html.media-viewer-open {
   display: none;
 }
 .lp-prices-label {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   font-size: 10px;
   color: #999;
 }
@@ -2174,6 +2186,10 @@ html.media-viewer-open {
 .lp-price-off {
   font-size: 10px;
   color: #8bd450;
+}
+.lp-price-note {
+  font-size: 10px;
+  color: #999;
 }
 .lp-body {
   -webkit-box-flex: 1;
@@ -2602,7 +2618,11 @@ html.link-preview-ready .article-entry a[href*="store.steampowered.com/"],
 html.link-preview-ready .article-entry a[href*="s.team/"],
 html.link-preview-ready .article-entry a[href*="xbox.com/"],
 html.link-preview-ready .article-entry a[href*="apps.apple.com/"],
-html.link-preview-ready .article-entry a[href*="play.google.com/"] {
+html.link-preview-ready .article-entry a[href*="play.google.com/"],
+html.link-preview-ready .article-entry a[href*="asobistage.asobistore.jp/"],
+html.link-preview-ready .article-entry a[href*="abema.tv/"],
+html.link-preview-ready .article-entry a[href*="stagecrowd.live/"],
+html.link-preview-ready .article-entry a[href*="l-tike.zaiko.io/"] {
   cursor: pointer;
 }
 @media screen and (max-width: 479px) {
