@@ -140,7 +140,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2013/12/29/kancolle/" data-id="cmv6u9i6y001vfgv28d3iac7m" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2013/12/29/kancolle/" data-id="cmv8byqc20023k4v20uq1bjos" class="article-share-link">Share</a>
       
 	  
       
@@ -195,7 +195,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2013/08/25/Wordpress/gp-region/" data-id="cmv6u9i7d003lfgv23sypds1g" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2013/08/25/Wordpress/gp-region/" data-id="cmv8byqc8002ik4v20rp14f38" class="article-share-link">Share</a>
       
 	  
       
@@ -265,7 +265,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2013/07/28/Wordpress/ll-sif/" data-id="cmv6u9i7h0043fgv235yj22dq" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2013/07/28/Wordpress/ll-sif/" data-id="cmv8byqcc002yk4v28o8candq" class="article-share-link">Share</a>
       
 	  
       
@@ -336,7 +336,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2013/07/22/Wordpress/kssma/" data-id="cmv6u9i7g003xfgv2eqx20esn" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2013/07/22/Wordpress/kssma/" data-id="cmv8byqcd0036k4v27z9f3ebu" class="article-share-link">Share</a>
       
 	  
       
@@ -402,7 +402,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2013/03/18/Wordpress/kanon-alarm/" data-id="cmv6u9i7f003qfgv2hgxd68cv" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2013/03/18/Wordpress/kanon-alarm/" data-id="cmv8byqca002ok4v2hlp4b8tr" class="article-share-link">Share</a>
       
 	  
       
@@ -456,7 +456,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2012/12/21/update_log/" data-id="cmv6u9i7c003ffgv2exu787hr" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2012/12/21/update_log/" data-id="cmv8byqcg003hk4v2cqz9cnvp" class="article-share-link">Share</a>
       
 	  
       
@@ -662,7 +662,7 @@ Test Line4 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2012/12/12/Working/markdown-test/" data-id="cmv6u9i7y0053fgv215tmfow0" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2012/12/12/Working/markdown-test/" data-id="cmv8byqcq004xk4v2g73c3xdp" class="article-share-link">Share</a>
       
 	  
       
@@ -779,7 +779,7 @@ wfhtony.</span></p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2012/07/09/Wordpress/ucg-ant-dvd/" data-id="cmv6u9i7t004wfgv29c9dbxxo" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2012/07/09/Wordpress/ucg-ant-dvd/" data-id="cmv8byqci003tk4v24x2o3eor" class="article-share-link">Share</a>
       
 	  
       
@@ -797,190 +797,10 @@ wfhtony.</span></p>
 
 
   
-    <article id="post-Working/markdown-test-encrypt" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/07/04/Working/markdown-test-encrypt/" class="article-date">
-  <time datetime="2012-07-04T15:33:33.000Z" itemprop="datePublished">2012-07-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/07/04/Working/markdown-test-encrypt/">Encrypt Test</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      <!-- Table of Contents -->
-      
-        <script src="/js/crypto-js.js"></script>
-<script>
-function doDecrypt (pwd, onError) {
-	console.log('in doDecrypt');
-	const txt = document.getElementById('enc_content').innerHTML;
-	let plantext;
-	try {
-		const bytes = CryptoJS.AES.decrypt(txt, pwd);
-		var plaintext = bytes.toString(CryptoJS.enc.Utf8);
-	} catch(err) {
-		if(onError) {
-			onError(err);
-		}
-		return;
-	}
-	document.getElementById('enc_content').innerHTML = plaintext;
-	document.getElementById('enc_content').style.display = 'block';
-	document.getElementById('enc_passwd').style.display = 'none';
-	if(typeof MathJax !== 'undefined') {
-		MathJax.Hub.Queue(
-			['resetEquationNumbers', MathJax.InputJax.TeX],
-			['PreProcess', MathJax.Hub],
-			['Reprocess', MathJax.Hub]
-		);
-	}
-}
-</script>
-<div id="enc_content" style="display:none">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</div>
-<div id="enc_passwd"> <input id="enc_pwd_input" type="password" class="enc-pwd-input" placeholder="請輸入密碼" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" class="enc-dec-btn"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div>
-<script>
-var onError = function(error) {
-	document.getElementById("enc_error").innerHTML = "password error!"
-};
-function decrypt() {
-var passwd = document.getElementById("enc_pwd_input").value;
-console.log(passwd);
-doDecrypt(passwd, onError);
-}
-</script>
-</div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://blog.wfhtony.space/2012/07/04/Working/markdown-test-encrypt/" data-id="cmv6u9i7q004pfgv22d3y0yka" class="article-share-link">Share</a>
-      
-	  
-      
-        <a href="https://blog.wfhtony.space/2012/07/04/Working/markdown-test-encrypt/#disqus_thread" class="article-comment-link">Comments</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Test/" rel="tag">Test</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Sth.Secret/donate" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2011/01/01/Sth.Secret/donate/" class="article-date">
-  <time datetime="2010-12-31T16:00:31.000Z" itemprop="datePublished">2011-01-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2011/01/01/Sth.Secret/donate/">賽博乞討頁</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      <!-- Table of Contents -->
-      
-        <script src="/js/crypto-js.js"></script>
-<script>
-function doDecrypt (pwd, onError) {
-	console.log('in doDecrypt');
-	const txt = document.getElementById('enc_content').innerHTML;
-	let plantext;
-	try {
-		const bytes = CryptoJS.AES.decrypt(txt, pwd);
-		var plaintext = bytes.toString(CryptoJS.enc.Utf8);
-	} catch(err) {
-		if(onError) {
-			onError(err);
-		}
-		return;
-	}
-	document.getElementById('enc_content').innerHTML = plaintext;
-	document.getElementById('enc_content').style.display = 'block';
-	document.getElementById('enc_passwd').style.display = 'none';
-	if(typeof MathJax !== 'undefined') {
-		MathJax.Hub.Queue(
-			['resetEquationNumbers', MathJax.InputJax.TeX],
-			['PreProcess', MathJax.Hub],
-			['Reprocess', MathJax.Hub]
-		);
-	}
-}
-</script>
-<div id="enc_content" style="display:none">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</div>
-<div id="enc_passwd"> <input id="enc_pwd_input" type="password" class="enc-pwd-input" placeholder="請輸入密碼" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" class="enc-dec-btn"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div>
-<script>
-var onError = function(error) {
-	document.getElementById("enc_error").innerHTML = "password error!"
-};
-function decrypt() {
-var passwd = document.getElementById("enc_pwd_input").value;
-console.log(passwd);
-doDecrypt(passwd, onError);
-}
-</script>
-</div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://blog.wfhtony.space/2011/01/01/Sth.Secret/donate/" data-id="cmv6u9i76002sfgv2d54w6gh4" class="article-share-link">Share</a>
-      
-	  
-      
-        <a href="https://blog.wfhtony.space/2011/01/01/Sth.Secret/donate/#disqus_thread" class="article-comment-link">Comments</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9B%9C%E8%AB%87/" rel="tag">雜談</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/20/">⇦ 前頁</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/22/">次頁 ⇨</a>
+    <a class="extend prev" rel="prev" href="/page/20/">⇦ 前頁</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span>
   </nav>
 </section>
       
@@ -1029,7 +849,7 @@ doDecrypt(passwd, onError);
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a><span class="category-list-count">323</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/">PS4隨手玩</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/Playstation-Plus/">Playstation Plus</a><span class="category-list-count">143</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/%E8%87%AA%E8%B3%BC%E8%87%AA%E5%88%86%E4%BA%AB/">自購自分享</a><span class="category-list-count">135</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/">雜談</a><span class="category-list-count">208</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/">PS4隨手玩</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/Playstation-Plus/">Playstation Plus</a><span class="category-list-count">143</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%9C%E8%AB%87/%E8%87%AA%E8%B3%BC%E8%87%AA%E5%88%86%E4%BA%AB/">自購自分享</a><span class="category-list-count">22</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -1038,7 +858,7 @@ doDecrypt(passwd, onError);
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android-App/" style="font-size: 17.69px;">Android_App</a> <a href="/tags/BDISO/" style="font-size: 10.77px;">BDISO</a> <a href="/tags/BDMV/" style="font-size: 12.31px;">BDMV</a> <a href="/tags/Blu-ray/" style="font-size: 13.08px;">Blu-ray</a> <a href="/tags/CD/" style="font-size: 10.77px;">CD</a> <a href="/tags/CD-ReleaseDate/" style="font-size: 10px;">CD_ReleaseDate</a> <a href="/tags/Croixleur%CE%A3/" style="font-size: 10px;">CroixleurΣ</a> <a href="/tags/DJMAX-RESPECT/" style="font-size: 10px;">DJMAX_RESPECT</a> <a href="/tags/Free-2-Play/" style="font-size: 10px;">Free 2 Play</a> <a href="/tags/GuP/" style="font-size: 11.54px;">GuP</a> <a href="/tags/HATSUBOSHI-GAKUEN-THE-IDOLMASTER/" style="font-size: 15.38px;">HATSUBOSHI_GAKUEN_THE_IDOLMASTER</a> <a href="/tags/Hi-Res/" style="font-size: 19.23px;">Hi-Res</a> <a href="/tags/Hi-Res-ReleaseDate/" style="font-size: 10px;">Hi-Res_ReleaseDate</a> <a href="/tags/IDOLM-STER-CINDERELLA-MASTER/" style="font-size: 10.77px;">IDOLM@STER_CINDERELLA_MASTER</a> <a href="/tags/Kancolle/" style="font-size: 10px;">Kancolle</a> <a href="/tags/Love-Live/" style="font-size: 10px;">Love_Live!</a> <a href="/tags/Mobile-Game/" style="font-size: 16.92px;">Mobile_Game</a> <a href="/tags/Nintendo-Switch-2/" style="font-size: 10px;">Nintendo Switch 2</a> <a href="/tags/OST/" style="font-size: 12.31px;">OST</a> <a href="/tags/OneDrive/" style="font-size: 10px;">OneDrive</a> <a href="/tags/PLATINUM-DEMO-%E2%80%93-FINAL-FANTASY-XV/" style="font-size: 10px;">PLATINUM DEMO – FINAL FANTASY XV</a> <a href="/tags/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/" style="font-size: 11.54px;">PS4隨手玩</a> <a href="/tags/PSN%E6%97%A5%E6%9C%8D/" style="font-size: 20px;">PSN日服</a> <a href="/tags/PSV-GAME/" style="font-size: 10px;">PSV_GAME</a> <a href="/tags/PSVita/" style="font-size: 10px;">PSVita</a> <a href="/tags/PlayStation/" style="font-size: 10.77px;">PlayStation</a> <a href="/tags/PlayStation-3/" style="font-size: 10px;">PlayStation 3</a> <a href="/tags/PlayStation-4/" style="font-size: 13.85px;">PlayStation 4</a> <a href="/tags/PlayStation-5/" style="font-size: 10.77px;">PlayStation 5</a> <a href="/tags/PlayStation-Portable/" style="font-size: 10px;">PlayStation Portable</a> <a href="/tags/PlayStation-Vita/" style="font-size: 10px;">PlayStation Vita</a> <a href="/tags/Playstation/" style="font-size: 10.77px;">Playstation</a> <a href="/tags/Playstation-3/" style="font-size: 10.77px;">Playstation 3</a> <a href="/tags/Playstation-4/" style="font-size: 13.08px;">Playstation 4</a> <a href="/tags/Playstation-5/" style="font-size: 10px;">Playstation 5</a> <a href="/tags/Playstation-Plus/" style="font-size: 20px;">Playstation Plus</a> <a href="/tags/Playstation-Portable/" style="font-size: 10.77px;">Playstation Portable</a> <a href="/tags/Playstation-Vita/" style="font-size: 13.08px;">Playstation Vita</a> <a href="/tags/SUPERBEAT-XONiC/" style="font-size: 10px;">SUPERBEAT_XONiC</a> <a href="/tags/Scan/" style="font-size: 10px;">Scan</a> <a href="/tags/Steam-Deck/" style="font-size: 10px;">Steam Deck</a> <a href="/tags/THE-IDOLMASTER/" style="font-size: 13.08px;">THE_IDOLMASTER</a> <a href="/tags/THE-IDOLMASTER-SHINY-COLORS/" style="font-size: 16.92px;">THE_IDOLMASTER_SHINY_COLORS</a> <a href="/tags/Test/" style="font-size: 10.77px;">Test</a> <a href="/tags/U149/" style="font-size: 10px;">U149</a> <a href="/tags/Update-log/" style="font-size: 10px;">Update_log</a> <a href="/tags/VTuber/" style="font-size: 12.31px;">VTuber</a> <a href="/tags/Xenoblade/" style="font-size: 10px;">Xenoblade</a> <a href="/tags/Xenogears/" style="font-size: 10px;">Xenogears</a> <a href="/tags/androidapp/" style="font-size: 11.54px;">androidapp</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/dvd/" style="font-size: 10px;">dvd</a> <a href="/tags/gamehalo/" style="font-size: 10px;">gamehalo</a> <a href="/tags/gapps/" style="font-size: 10px;">gapps</a> <a href="/tags/googleplay/" style="font-size: 10px;">googleplay</a> <a href="/tags/iDOLM-STER/" style="font-size: 18.46px;">iDOLM@STER</a> <a href="/tags/iOS-App/" style="font-size: 16.92px;">iOS_App</a> <a href="/tags/im-s/" style="font-size: 10px;">im@s</a> <a href="/tags/iosapp/" style="font-size: 10.77px;">iosapp</a> <a href="/tags/v%CE%B1-liv/" style="font-size: 12.31px;">vα-liv</a> <a href="/tags/webpage-game/" style="font-size: 10px;">webpage_game</a> <a href="/tags/%E3%81%93%E3%81%84%E3%81%8B%E3%81%9C-%E5%BD%A9/" style="font-size: 10px;">こいかぜ_-彩-</a> <a href="/tags/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC-%E3%83%97%E3%83%A9%E3%83%81%E3%83%8A%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%BA/" style="font-size: 10px;">アイドルマスター プラチナスターズ</a> <a href="/tags/%E3%82%A6%E3%83%9E%E5%A8%98-%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC/" style="font-size: 16.15px;">ウマ娘 プリティーダービー</a> <a href="/tags/%E3%83%87%E3%83%AC%E3%82%B9%E3%83%86/" style="font-size: 14.62px;">デレステ</a> <a href="/tags/%E3%83%87%E3%83%AC%E3%83%9E%E3%82%B9/" style="font-size: 10px;">デレマス</a> <a href="/tags/%E5%81%B6%E5%83%8F%E5%A4%A7%E5%B8%AB-%E7%99%BD%E9%87%91%E6%98%9F%E5%85%89/" style="font-size: 10px;">偶像大師 白金星光</a> <a href="/tags/%E5%82%99%E4%BB%BD/" style="font-size: 10px;">備份</a> <a href="/tags/%E5%8A%A8%E6%84%9F%E6%96%B0%E6%97%B6%E4%BB%A3/" style="font-size: 10px;">动感新时代</a> <a href="/tags/%E5%A0%B4%E8%B2%A9CD/" style="font-size: 13.85px;">場販CD</a> <a href="/tags/%E5%AD%A6%E5%9C%92%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC/" style="font-size: 15.38px;">学園アイドルマスター</a> <a href="/tags/%E6%90%96%E6%A1%BF/" style="font-size: 10px;">搖桿</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 11.54px;">游戏</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">游戏机实用技术</a> <a href="/tags/%E7%B6%AD%E4%BF%AE/" style="font-size: 10px;">維修</a> <a href="/tags/%E9%99%90%E5%AE%9A%E7%89%88/" style="font-size: 10px;">限定版</a> <a href="/tags/%E9%9B%9C%E8%AB%87/" style="font-size: 11.54px;">雜談</a> <a href="/tags/%E9%9C%8D%E7%88%BE%E6%90%96%E6%A1%BF/" style="font-size: 10px;">霍爾搖桿</a>
+      <a href="/tags/Android-App/" style="font-size: 18.57px;">Android_App</a> <a href="/tags/CD-ReleaseDate/" style="font-size: 10px;">CD_ReleaseDate</a> <a href="/tags/Croixleur%CE%A3/" style="font-size: 10px;">CroixleurΣ</a> <a href="/tags/Free-2-Play/" style="font-size: 10px;">Free 2 Play</a> <a href="/tags/HATSUBOSHI-GAKUEN-THE-IDOLMASTER/" style="font-size: 10px;">HATSUBOSHI_GAKUEN_THE_IDOLMASTER</a> <a href="/tags/Hi-Res/" style="font-size: 14.29px;">Hi-Res</a> <a href="/tags/Hi-Res-ReleaseDate/" style="font-size: 10px;">Hi-Res_ReleaseDate</a> <a href="/tags/Mobile-Game/" style="font-size: 17.14px;">Mobile_Game</a> <a href="/tags/Nintendo-Switch-2/" style="font-size: 10px;">Nintendo Switch 2</a> <a href="/tags/OST/" style="font-size: 10px;">OST</a> <a href="/tags/OneDrive/" style="font-size: 10px;">OneDrive</a> <a href="/tags/PLATINUM-DEMO-%E2%80%93-FINAL-FANTASY-XV/" style="font-size: 10px;">PLATINUM DEMO – FINAL FANTASY XV</a> <a href="/tags/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/" style="font-size: 12.86px;">PS4隨手玩</a> <a href="/tags/PSN%E6%97%A5%E6%9C%8D/" style="font-size: 20px;">PSN日服</a> <a href="/tags/PSV-GAME/" style="font-size: 10px;">PSV_GAME</a> <a href="/tags/PSVita/" style="font-size: 10px;">PSVita</a> <a href="/tags/PlayStation/" style="font-size: 11.43px;">PlayStation</a> <a href="/tags/PlayStation-3/" style="font-size: 10px;">PlayStation 3</a> <a href="/tags/PlayStation-4/" style="font-size: 15.71px;">PlayStation 4</a> <a href="/tags/PlayStation-5/" style="font-size: 11.43px;">PlayStation 5</a> <a href="/tags/PlayStation-Portable/" style="font-size: 10px;">PlayStation Portable</a> <a href="/tags/PlayStation-Vita/" style="font-size: 10px;">PlayStation Vita</a> <a href="/tags/Playstation/" style="font-size: 11.43px;">Playstation</a> <a href="/tags/Playstation-3/" style="font-size: 11.43px;">Playstation 3</a> <a href="/tags/Playstation-4/" style="font-size: 14.29px;">Playstation 4</a> <a href="/tags/Playstation-5/" style="font-size: 10px;">Playstation 5</a> <a href="/tags/Playstation-Plus/" style="font-size: 20px;">Playstation Plus</a> <a href="/tags/Playstation-Portable/" style="font-size: 11.43px;">Playstation Portable</a> <a href="/tags/Playstation-Vita/" style="font-size: 14.29px;">Playstation Vita</a> <a href="/tags/SUPERBEAT-XONiC/" style="font-size: 10px;">SUPERBEAT_XONiC</a> <a href="/tags/Steam-Deck/" style="font-size: 10px;">Steam Deck</a> <a href="/tags/THE-IDOLMASTER-SHINY-COLORS/" style="font-size: 10px;">THE_IDOLMASTER_SHINY_COLORS</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/Update-log/" style="font-size: 10px;">Update_log</a> <a href="/tags/VTuber/" style="font-size: 10px;">VTuber</a> <a href="/tags/androidapp/" style="font-size: 12.86px;">androidapp</a> <a href="/tags/ant/" style="font-size: 10px;">ant</a> <a href="/tags/dvd/" style="font-size: 10px;">dvd</a> <a href="/tags/gamehalo/" style="font-size: 10px;">gamehalo</a> <a href="/tags/gapps/" style="font-size: 10px;">gapps</a> <a href="/tags/googleplay/" style="font-size: 10px;">googleplay</a> <a href="/tags/iDOLM-STER/" style="font-size: 12.86px;">iDOLM@STER</a> <a href="/tags/iOS-App/" style="font-size: 17.14px;">iOS_App</a> <a href="/tags/im-s/" style="font-size: 10px;">im@s</a> <a href="/tags/iosapp/" style="font-size: 11.43px;">iosapp</a> <a href="/tags/v%CE%B1-liv/" style="font-size: 10px;">vα-liv</a> <a href="/tags/webpage-game/" style="font-size: 10px;">webpage_game</a> <a href="/tags/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC-%E3%83%97%E3%83%A9%E3%83%81%E3%83%8A%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%BA/" style="font-size: 10px;">アイドルマスター プラチナスターズ</a> <a href="/tags/%E3%82%A6%E3%83%9E%E5%A8%98-%E3%83%97%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%83%80%E3%83%BC%E3%83%93%E3%83%BC/" style="font-size: 10px;">ウマ娘 プリティーダービー</a> <a href="/tags/%E3%83%87%E3%83%AC%E3%82%B9%E3%83%86/" style="font-size: 10px;">デレステ</a> <a href="/tags/%E5%81%B6%E5%83%8F%E5%A4%A7%E5%B8%AB-%E7%99%BD%E9%87%91%E6%98%9F%E5%85%89/" style="font-size: 10px;">偶像大師 白金星光</a> <a href="/tags/%E5%82%99%E4%BB%BD/" style="font-size: 10px;">備份</a> <a href="/tags/%E5%8A%A8%E6%84%9F%E6%96%B0%E6%97%B6%E4%BB%A3/" style="font-size: 10px;">动感新时代</a> <a href="/tags/%E5%AD%A6%E5%9C%92%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC/" style="font-size: 10px;">学園アイドルマスター</a> <a href="/tags/%E6%90%96%E6%A1%BF/" style="font-size: 10px;">搖桿</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 12.86px;">游戏</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">游戏机实用技术</a> <a href="/tags/%E7%B6%AD%E4%BF%AE/" style="font-size: 10px;">維修</a> <a href="/tags/%E9%9B%9C%E8%AB%87/" style="font-size: 11.43px;">雜談</a> <a href="/tags/%E9%9C%8D%E7%88%BE%E6%90%96%E6%A1%BF/" style="font-size: 10px;">霍爾搖桿</a>
     </div>
   </div>
 
