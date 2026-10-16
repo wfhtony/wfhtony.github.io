@@ -505,7 +505,9 @@
           list.push({ src: zoomSrc(n), alt: n.alt || '' });
         } else if (isVisible(n) &&
           !n.classList.contains('img-viewer-img') &&
-          !n.closest('.img-viewer')) {
+          !n.closest('.img-viewer') &&
+          // 串流節目卡的海報不進相簿（點卡片是「前往觀看」，不是看圖）
+          !n.closest('.sc-card')) {
           list.push({ src: zoomSrc(n), alt: n.alt || '' });
         }
       }
