@@ -1640,7 +1640,7 @@
   </url>
   
   <url>
-    <loc>https://blog.wfhtony.space/2015/06/24/Wordpress/psn-playstation-plus-japan-5th-anniversary/</loc>
+    <loc>https://blog.wfhtony.space/2014/09/15/Wordpress/psv-f2p-pkg/</loc>
     
     <lastmod>2018-02-09</lastmod>
     
@@ -1649,7 +1649,7 @@
   </url>
   
   <url>
-    <loc>https://blog.wfhtony.space/2014/09/15/Wordpress/psv-f2p-pkg/</loc>
+    <loc>https://blog.wfhtony.space/2015/06/24/Wordpress/psn-playstation-plus-japan-5th-anniversary/</loc>
     
     <lastmod>2018-02-09</lastmod>
     
@@ -1685,6 +1685,15 @@
   </url>
   
   <url>
+    <loc>https://blog.wfhtony.space/2013/07/28/Wordpress/ll-sif/</loc>
+    
+    <lastmod>2018-02-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.wfhtony.space/2013/07/22/Wordpress/kssma/</loc>
     
     <lastmod>2018-02-09</lastmod>
@@ -1703,15 +1712,6 @@
   </url>
   
   <url>
-    <loc>https://blog.wfhtony.space/2013/07/28/Wordpress/ll-sif/</loc>
-    
-    <lastmod>2018-02-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.wfhtony.space/2012/07/09/Wordpress/ucg-ant-dvd/</loc>
     
     <lastmod>2018-02-09</lastmod>
@@ -1721,7 +1721,7 @@
   </url>
   
   <url>
-    <loc>https://blog.wfhtony.space/2015/03/03/Wordpress/ps-plus-jpn-2015-03/</loc>
+    <loc>https://blog.wfhtony.space/2015/03/31/Wordpress/ps-plus-jpn-2015-04/</loc>
     
     <lastmod>2018-02-09</lastmod>
     
@@ -1739,7 +1739,7 @@
   </url>
   
   <url>
-    <loc>https://blog.wfhtony.space/2015/03/31/Wordpress/ps-plus-jpn-2015-04/</loc>
+    <loc>https://blog.wfhtony.space/2015/03/03/Wordpress/ps-plus-jpn-2015-03/</loc>
     
     <lastmod>2018-02-09</lastmod>
     
@@ -1829,6 +1829,27 @@
 
   
   <url>
+    <loc>https://blog.wfhtony.space/tags/Playstation-4/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wfhtony.space/tags/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wfhtony.space/tags/Croixleur%CE%A3/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.wfhtony.space/tags/Steam-Deck/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -1864,48 +1885,6 @@
   </url>
   
   <url>
-    <loc>https://blog.wfhtony.space/tags/Playstation-4/</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wfhtony.space/tags/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wfhtony.space/tags/Croixleur%CE%A3/</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wfhtony.space/tags/HATSUBOSHI-GAKUEN-THE-IDOLMASTER/</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wfhtony.space/tags/%E5%AD%A6%E5%9C%92%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC/</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wfhtony.space/tags/Hi-Res/</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.wfhtony.space/tags/Mobile-Game/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -1934,6 +1913,41 @@
   </url>
   
   <url>
+    <loc>https://blog.wfhtony.space/tags/Hi-Res/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wfhtony.space/tags/CD-ReleaseDate/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wfhtony.space/tags/Hi-Res-ReleaseDate/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wfhtony.space/tags/HATSUBOSHI-GAKUEN-THE-IDOLMASTER/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wfhtony.space/tags/%E5%AD%A6%E5%9C%92%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.wfhtony.space/tags/%E3%82%A2%E3%82%A4%E3%83%89%E3%83%AB%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC-%E3%83%97%E3%83%A9%E3%83%81%E3%83%8A%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%BA/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -1955,14 +1969,7 @@
   </url>
   
   <url>
-    <loc>https://blog.wfhtony.space/tags/CD-ReleaseDate/</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wfhtony.space/tags/Hi-Res-ReleaseDate/</loc>
+    <loc>https://blog.wfhtony.space/tags/THE-IDOLMASTER-SHINY-COLORS/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1977,13 +1984,6 @@
   
   <url>
     <loc>https://blog.wfhtony.space/tags/VTuber/</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wfhtony.space/tags/THE-IDOLMASTER-SHINY-COLORS/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2005,6 +2005,13 @@
   
   <url>
     <loc>https://blog.wfhtony.space/tags/webpage-game/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wfhtony.space/tags/PLATINUM-DEMO-%E2%80%93-FINAL-FANTASY-XV/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2054,13 +2061,6 @@
   
   <url>
     <loc>https://blog.wfhtony.space/tags/PlayStation-5/</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wfhtony.space/tags/PLATINUM-DEMO-%E2%80%93-FINAL-FANTASY-XV/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2123,6 +2123,13 @@
   </url>
   
   <url>
+    <loc>https://blog.wfhtony.space/tags/Test/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.wfhtony.space/tags/PSV-GAME/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -2137,20 +2144,6 @@
   </url>
   
   <url>
-    <loc>https://blog.wfhtony.space/tags/Test/</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wfhtony.space/tags/Update-log/</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.wfhtony.space/tags/gapps/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -2159,6 +2152,13 @@
   
   <url>
     <loc>https://blog.wfhtony.space/tags/googleplay/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wfhtony.space/tags/Update-log/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2187,6 +2187,13 @@
   
   <url>
     <loc>https://blog.wfhtony.space/tags/Playstation-Plus/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wfhtony.space/tags/Free-2-Play/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2228,7 +2235,7 @@
   </url>
   
   <url>
-    <loc>https://blog.wfhtony.space/tags/Free-2-Play/</loc>
+    <loc>https://blog.wfhtony.space/tags/OST/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2236,13 +2243,6 @@
   
   <url>
     <loc>https://blog.wfhtony.space/tags/%E3%83%87%E3%83%AC%E3%82%B9%E3%83%86/</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wfhtony.space/tags/OST/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2258,14 +2258,14 @@
   </url>
   
   <url>
-    <loc>https://blog.wfhtony.space/categories/%E9%9B%9C%E8%AB%87/%E8%87%AA%E8%B3%BC%E8%87%AA%E5%88%86%E4%BA%AB/</loc>
+    <loc>https://blog.wfhtony.space/categories/%E9%9B%9C%E8%AB%87/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.wfhtony.space/categories/%E9%9B%9C%E8%AB%87/PS4%E9%9A%A8%E6%89%8B%E7%8E%A9/</loc>
+    <loc>https://blog.wfhtony.space/categories/%E9%9B%9C%E8%AB%87/%E8%87%AA%E8%B3%BC%E8%87%AA%E5%88%86%E4%BA%AB/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
