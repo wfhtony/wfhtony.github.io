@@ -204,7 +204,11 @@
     });
     var openBtn = mkButton('open', ICON.open, '在新分頁開啟原圖', function () {
       var it = items[index];
-      if (it) window.open(it.src, '_blank', 'noopener');
+      // 導覽的 Referer 不受 <img> 屬性影響 → 來源圖要求 no-referrer 時一併帶 noreferrer
+      if (it) {
+        window.open(it.src, '_blank',
+          it.policy === 'no-referrer' ? 'noopener,noreferrer' : 'noopener');
+      }
     });
     closeBtn = mkButton('close', ICON.close, '關閉（Esc）', close);
 
@@ -311,6 +315,7 @@
     if (!it) return;
     index = i;
     imgEl.classList.add('loading');
+    applyPolicy(imgEl, it.policy);
     imgEl.src = it.src;
     imgEl.alt = it.alt || '';
     if (SHOW_CAPTION && it.alt) {
@@ -331,6 +336,7 @@
     var it = items[(i + items.length) % items.length];
     if (!it || !it.src) return;
     var im = new Image();
+    applyPolicy(im, it.policy);
     im.src = it.src;
   }
 
@@ -485,6 +491,23 @@
     return el.getAttribute('data-zoom-src') || el.currentSrc || el.src;
   }
 
+  // 沿用來源 <img> 的 referrerpolicy（文章圖一律由 scripts/referrerpolicy-image.js 補上
+  // `no-referrer`；檢視器是用 JS 建的 <img>，不會繼承來源屬性 —— 不沿用會出現
+  // 「縮圖正常、放大圖 403」的假象，bilibili 圖牀尤其明顯）。
+  function policyOf(el) {
+    return (el && el.getAttribute && el.getAttribute('referrerpolicy')) || '';
+  }
+
+  function itemOf(el) {
+    return { src: zoomSrc(el), alt: (el && el.alt) || '', policy: policyOf(el) };
+  }
+
+  function applyPolicy(node, policy) {
+    if (!node) return;
+    if (policy) node.setAttribute('referrerpolicy', policy);
+    else node.removeAttribute('referrerpolicy');
+  }
+
   function isVisible(el) {
     return el.getClientRects().length > 0 || el.offsetWidth > 0 || el.offsetHeight > 0;
   }
@@ -502,19 +525,19 @@
         var n = nodes[i];
         if (n === img) {
           at = list.length;
-          list.push({ src: zoomSrc(n), alt: n.alt || '' });
+          list.push(itemOf(n));
         } else if (isVisible(n) &&
           !n.classList.contains('img-viewer-img') &&
           !n.closest('.img-viewer') &&
           // 串流節目卡的海報不進相簿（點卡片是「前往觀看」，不是看圖）
           !n.closest('.sc-card')) {
-          list.push({ src: zoomSrc(n), alt: n.alt || '' });
+          list.push(itemOf(n));
         }
       }
     }
 
     if (!list.length) {
-      list = [{ src: zoomSrc(img), alt: img.alt || '' }];
+      list = [itemOf(img)];
       at = 0;
     }
     open(list, at, img);

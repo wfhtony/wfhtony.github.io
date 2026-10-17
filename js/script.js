@@ -139,6 +139,11 @@
     $entry.find('img').each(function(){
       if ($(this).parent().hasClass('fancybox')) return;
 
+      // 卡片（.sc-card，含影片卡／番劇卡／串流節目卡）的海報本來就是卡片自己 <a> 的內容：
+      // 再包一層 fancybox 會變成 <a> 嵌套（HTML 不合法、瀏覽器會拆掉外層），
+      // 而且點海報會開圖片檢視器而不是卡片連結／播放浮窗 —— 留給 post-links.js 接管。
+      if ($(this).closest('.sc-card').length) return;
+
       var alt = this.alt;
 
       if (alt) $(this).after('<span class="caption">' + alt + '</span>');

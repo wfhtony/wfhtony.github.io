@@ -2833,14 +2833,14 @@ html.link-preview-ready .article-entry a[href*="l-tike.zaiko.io/"] {
   gap: 4px;
   margin-top: 10px;
 }
-.pe-weibo .pe-wb-pics[data-count="1"] .pe-wb-pic {
+.pe-weibo .pe-wb-pics[data-count="1"] .pe-pic-link {
   max-width: 100%;
 }
 .pe-weibo .pe-wb-pics[data-count="1"] img {
   max-height: 380px;
   width: auto;
 }
-.pe-weibo .pe-wb-pic {
+.pe-weibo .pe-pic-link {
   display: block;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -2851,12 +2851,16 @@ html.link-preview-ready .article-entry a[href*="l-tike.zaiko.io/"] {
   flex: 0 0 auto;
   line-height: 0;
 }
-.pe-weibo .pe-wb-pic img {
+.pe-weibo .pe-pic-link img {
   display: block;
   width: 108px;
   height: 108px;
   object-fit: cover;
   border-radius: 4px;
+  background: #141414;
+}
+.pe-weibo img[data-pe-fail] {
+  outline: 1px dashed #2f2f2f;
   background: #141414;
 }
 .pe-weibo .pe-wb-foot {
@@ -2921,6 +2925,12 @@ html.link-preview-ready .article-entry a[href*="l-tike.zaiko.io/"] {
 .sc-tver {
   --sc-accent: #0b6fd0;
 }
+.sc-bilibili {
+  --sc-accent: #fb7299;
+}
+.sc-bangumi {
+  --sc-accent: #f69;
+}
 .sc-card {
   display: block;
   overflow: hidden;
@@ -2973,6 +2983,42 @@ html.link-preview-ready .article-entry a[href*="l-tike.zaiko.io/"] {
 }
 .sc-body {
   padding: 11px 14px 9px;
+}
+.sc-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.65);
+  -webkit-box-shadow: 0 1px 6px rgba(0,0,0,0.45);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.45);
+  -webkit-transition: background 0.16s ease, -webkit-transform 0.16s ease;
+  -moz-transition: background 0.16s ease, -moz-transform 0.16s ease;
+  -o-transition: background 0.16s ease, -o-transform 0.16s ease;
+  -ms-transition: background 0.16s ease, -ms-transform 0.16s ease;
+  transition: background 0.16s ease, transform 0.16s ease;
+}
+.sc-play::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -9px 0 0 -5px;
+  border-style: solid;
+  border-width: 9px 0 9px 15px;
+  border-color: transparent transparent transparent #fff;
+}
+.sc-card:hover .sc-play {
+  background: var(--sc-accent);
+  -webkit-transform: scale(1.06);
+  -moz-transform: scale(1.06);
+  -o-transform: scale(1.06);
+  -ms-transform: scale(1.06);
+  transform: scale(1.06);
 }
 .sc-head {
   display: -webkit-box;

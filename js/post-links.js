@@ -11,6 +11,10 @@
  *   external_link）寫入；這裡只補「解密後才注入 DOM」與其他漏網的連結
  * - 影音浮窗只在 .article-entry 內、且網址命中 YouTube / Bilibili / niconico 時接管；
  *   播放器直接嵌各平台官方 embed，不另寫樣式
+ * - 連結若帶 data-media-embed（主題的 {% bilibili card %} / {% bilibili bangumi %} 會寫）
+ *   則優先採用該網址：番劇光看網址推不出 embed（player.html 只認 aid+cid，不認
+ *   ep_id／season_id），所以番劇卡的播放入口由建置期解析後帶在屬性上；
+ *   純文字的番劇連結（不是卡片）不接管，讓瀏覽器開新分頁
  * - 尊重作者自訂連結：<a class="fancybox">（圖片連結）留給 img-viewer.js
  */
 (function () {
@@ -77,6 +81,14 @@
     var p = [query, 'page=' + (page || 1), 'autoplay=' + (AUTOPLAY ? 1 : 0)];
     if (start) p.push('t=' + start);
     return 'https://player.bilibili.com/player.html?' + p.join('&');
+  }
+
+  // 卡片帶來的 embed 已經含 aid/cid 等關鍵參數，這裡只補本站的 autoplay 政策
+  var CARD_EMBED_RE = /^https:\/\/player\.bilibili\.com\/player\.html\?/;
+
+  function withAutoplay(url) {
+    if (/[?&]autoplay=/.test(url)) return url;
+    return url + (url.indexOf('?') >= 0 ? '&' : '?') + 'autoplay=' + (AUTOPLAY ? 1 : 0);
   }
 
   function niconicoEmbed(id) {
@@ -316,7 +328,14 @@
     if (!a) return;
     if (a.classList.contains('fancybox')) return; // 圖片連結交給 img-viewer
 
-    var info = parseMedia(a.href);
+    // 卡片自帶的 embed 優先（番劇的必要條件；投稿的 b23.tv 短連結也靠它）
+    var info = null;
+    var dataEmbed = a.getAttribute ? a.getAttribute('data-media-embed') : null;
+    if (dataEmbed && CARD_EMBED_RE.test(dataEmbed)) {
+      info = { kind: 'bilibili', embed: withAutoplay(dataEmbed) };
+    } else {
+      info = parseMedia(a.href);
+    }
     if (!info) return;
 
     info.original = a.href;
