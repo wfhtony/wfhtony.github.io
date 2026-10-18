@@ -61,3 +61,18 @@
 .spoiler .spoiler-content p:first-child {
     margin-top: 0 !important;
 }
+/* theme override: equal top and bottom spacing inside the spoiler body */
+.spoiler .spoiler-content {
+    padding-top: 1.6em;
+    padding-bottom: 1.6em;
+}
+.spoiler .spoiler-content > :first-child {
+    margin-top: 0 !important;
+}
+.spoiler .spoiler-content > :last-child {
+    margin-bottom: 0 !important;
+}
+.spoiler.collapsed .spoiler-content {
+    padding-top: 0;
+    padding-bottom: 0;
+}
