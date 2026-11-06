@@ -29,6 +29,14 @@
   var SCOPE = cfg.scope || '.article-entry';
   var PREFETCH = cfg.prefetch !== false;
 
+  /* 百科 hover 預覽（Wikipedia／pixiv 百科／ニコニコ大百科）
+   * 資料同樣是建置期採集、同源靜態 JSON；沒有資料就「不顯示卡片」，
+   * 不影響連結本身，也不會像品牌卡那樣在每個外部連結上冒出來。 */
+  var ENC = cfg.encyclopedia || null;
+  var ENC_ENABLE = !!(ENC && ENC.enable !== false);
+  var ENC_URL = (ENC && ENC.data_url) || '/encyclopedia-preview.json';
+  var KEYS = typeof window !== 'undefined' ? window.LinkPreviewKeys : null;
+
   /* ------------------------------------------------------------ 平臺表 */
 
   var PLATFORMS = [
@@ -128,6 +136,21 @@
       return null;
     }
     if (u.protocol !== 'http:' && u.protocol !== 'https:') return null;
+
+    /* 百科優先：key 必須與 tools/encyclopedia-lib.cjs 完全一致 */
+    if (ENC_ENABLE && KEYS) {
+      var er = KEYS.parseUrl(u);
+      if (er) {
+        return {
+          key: er.key,
+          host: u.hostname.toLowerCase(),
+          platform: { key: er.provider, name: er.siteLabel, color: er.accent },
+          kind: 'encyclopedia',
+          url: er.url
+        };
+      }
+    }
+
     var canon = psnCanonical(u);
     if (canon) {
       try {
@@ -148,6 +171,7 @@
       key: host + p + (params.length ? '?' + params.join('&') : ''),
       host: host,
       platform: platformOf(host, p),
+      kind: 'music',
       url: u.href
     };
   }
@@ -172,6 +196,17 @@
       .then(function (j) { return (j && j.tracks) || {}; })
       .catch(function () { return {}; });
     return tracksPromise;
+  }
+
+  var encPromise = null;
+  function loadEncyclopedia() {
+    if (!ENC_ENABLE) return Promise.resolve({});
+    if (encPromise) return encPromise;
+    encPromise = fetch(ENC_URL, { credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { return (j && j.entries) || {}; })
+      .catch(function () { return {}; });
+    return encPromise;
   }
 
   /* --------------------------------------------------------------- 工具 */
@@ -208,7 +243,7 @@
   /* ------------------------------------------------------------ 卡片 DOM */
 
   var card, chipDot, platName, typeBadge, tagWrap, qualityEl, priceEl;
-  var bodyEl, coverBox, coverImg, titleEl, artistEl, metaEl, pricesWrap, noteEl;
+  var bodyEl, coverBox, coverImg, titleEl, descEl, artistEl, metaEl, pricesWrap, noteEl;
   var tracksWrap, tracksToggle, trackList, tracksEmpty;
   var embedWrap;
   var openLink, embedBtn;
@@ -251,6 +286,8 @@
     coverBox.appendChild(coverImg);
     var info = el('div', 'lp-info');
     titleEl = el('div', 'lp-title');
+    descEl = el('div', 'lp-desc');
+    descEl.hidden = true;
     artistEl = el('div', 'lp-artist');
     metaEl = el('div', 'lp-meta');
     pricesWrap = el('div', 'lp-prices');
@@ -258,6 +295,7 @@
     noteEl = el('div', 'lp-note');
     noteEl.hidden = true;
     info.appendChild(titleEl);
+    info.appendChild(descEl);
     info.appendChild(artistEl);
     info.appendChild(metaEl);
     info.appendChild(pricesWrap);
@@ -304,7 +342,8 @@
   }
 
   function resetCard() {
-    card.classList.remove('lp-brand', 'lp-embedding');
+    card.classList.remove('lp-brand', 'lp-embedding', 'lp-encyclopedia');
+    card.style.width = '';
     bodyEl.hidden = false;
     tracksWrap.hidden = true;
     tracksToggle.hidden = false;
@@ -317,6 +356,8 @@
     embedBtn.hidden = true;
     coverImg.removeAttribute('src');
     coverBox.hidden = false;
+    descEl.hidden = true;
+    descEl.textContent = '';
     priceEl.textContent = '';
     priceEl.hidden = true;
     typeBadge.hidden = true;
@@ -540,6 +581,40 @@
     openLink.textContent = '前往 ' + info.host + ' \u2197';
   }
 
+  /* 百科卡：首段＋代表圖。沒有播放器、沒有曲目、沒有價格。 */
+  function renderEncyclopedia(entry, info, link) {
+    resetCard();
+    currentKey = info.key;
+    card.classList.add('lp-encyclopedia');
+
+    chipDot.style.background = info.platform.color;
+    platName.textContent = entry.siteLabel || info.platform.name;
+
+    typeBadge.hidden = false;
+    typeBadge.textContent = '百科';
+    typeBadge.className = 'lp-type lp-type-encyclopedia';
+
+    if (entry.image && /^https:\/\//i.test(entry.image)) {
+      coverBox.hidden = false;
+      coverImg.classList.remove('lp-img-on');
+      coverImg.onload = function () { coverImg.classList.add('lp-img-on'); };
+      coverImg.src = entry.image;
+      if (coverImg.complete && coverImg.naturalWidth > 0) coverImg.classList.add('lp-img-on');
+    } else {
+      coverBox.hidden = true;
+    }
+
+    titleEl.textContent = entry.pageTitle || entry.title || '';
+    descEl.textContent = entry.extract || '';
+    descEl.hidden = !entry.extract;
+    artistEl.hidden = true;
+    metaEl.hidden = true;
+
+    var safe = KEYS ? KEYS.parseUrl(entry.url || '') : null;
+    openLink.href = (safe && safe.url) || link.href;
+    openLink.textContent = '閱讀條目 \u2197';
+  }
+
   function trackRow(t) {
     var li = el('li', 'lp-track');
     li.appendChild(el('span', 'lp-track-no', String(t.no || '').padStart(2, '0')));
@@ -674,11 +749,33 @@
     hideTimer = setTimeout(hide, 140);
   }
 
+  function reveal(link) {
+    card.setAttribute('aria-hidden', 'false');
+    card.classList.add('on');
+    shown = true;
+    position(link);
+    link.setAttribute('aria-describedby', 'lp-card');
+  }
+
   function show(link) {
     var info = normalize(link.href);
     if (!info || !info.platform) return;
     currentLink = link;
     ensureCard();
+
+    if (info.kind === 'encyclopedia') {
+      loadEncyclopedia().then(function (entries) {
+        if (currentLink !== link) return;
+        var entry = entries[info.key];
+        // 沒有資料就安靜地不顯示（不影響連結，也不冒品牌卡）
+        if (!entry || entry.error || entry.missing || entry.blocked) return;
+        if (!entry.extract && !entry.image) return;
+        renderEncyclopedia(entry, info, link);
+        reveal(link);
+      });
+      return;
+    }
+
     loadData().then(function (entries) {
       if (currentLink !== link) return;
       var entry = entries[info.key];
@@ -689,11 +786,7 @@
       } else {
         return;
       }
-      card.setAttribute('aria-hidden', 'false');
-      card.classList.add('on');
-      shown = true;
-      position(link);
-      link.setAttribute('aria-describedby', 'lp-card');
+      reveal(link);
     });
   }
 
@@ -714,6 +807,7 @@
     var a = node.closest('a[href]');
     if (!a) return null;
     if (a.closest('.lp-card')) return null;
+    if (a.closest('.sc')) return null; // 百科／串流卡片自己的連結不再彈一層預覽
     if (a.classList.contains('fancybox')) return null;
     if (!a.closest(SCOPE)) return null;
     return a;
@@ -796,7 +890,10 @@
   /* 閒置預抓資料（首次 hover 就能立即顯示） */
   if (PREFETCH) {
     var idle = window.requestIdleCallback || function (fn) { return setTimeout(fn, 1200); };
-    idle(function () { loadData(); });
+    idle(function () {
+      loadData();
+      if (ENC_ENABLE) loadEncyclopedia();
+    });
   }
 
   document.documentElement.classList.add('link-preview-ready');

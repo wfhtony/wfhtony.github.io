@@ -2002,6 +2002,11 @@ html.media-viewer-open {
   background: rgba(255,196,143,0.12);
   border: 1px solid rgba(255,196,143,0.3);
 }
+.lp-type.lp-type-encyclopedia {
+  color: #a9c6d8;
+  background: rgba(169,198,216,0.12);
+  border: 1px solid rgba(169,198,216,0.28);
+}
 .lp-tags {
   display: -webkit-inline-box;
   display: -moz-inline-box;
@@ -2280,6 +2285,19 @@ html.media-viewer-open {
   margin-top: 5px;
   font-size: 11px;
   color: #999;
+}
+.lp-desc {
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #b9b9b9;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.lp-desc[hidden] {
+  display: none;
 }
 .lp-note {
   margin-top: 6px;
@@ -2594,6 +2612,25 @@ html.media-viewer-open {
   -webkit-line-clamp: 2;
   font-size: 13px;
 }
+.lp-card.lp-encyclopedia {
+  width: 380px;
+}
+.lp-card.lp-encyclopedia .lp-body {
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -o-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+.lp-card.lp-encyclopedia .lp-cover {
+  width: 84px;
+  height: 84px;
+  background: rgba(255,255,255,0.05);
+}
+.lp-card.lp-encyclopedia .lp-title {
+  -webkit-line-clamp: 2;
+}
 html.link-preview-ready .article-entry a[href*="mora.jp"],
 html.link-preview-ready .article-entry a[href*="ototoy.jp"],
 html.link-preview-ready .article-entry a[href*="recochoku.jp"],
@@ -2622,7 +2659,13 @@ html.link-preview-ready .article-entry a[href*="play.google.com/"],
 html.link-preview-ready .article-entry a[href*="asobistage.asobistore.jp/"],
 html.link-preview-ready .article-entry a[href*="abema.tv/"],
 html.link-preview-ready .article-entry a[href*="stagecrowd.live/"],
-html.link-preview-ready .article-entry a[href*="l-tike.zaiko.io/"] {
+html.link-preview-ready .article-entry a[href*="l-tike.zaiko.io/"],
+html.link-preview-ready .article-entry a[href*="wikipedia.org/wiki/"],
+html.link-preview-ready .article-entry a[href*="wikipedia.org/zh-"],
+html.link-preview-ready .article-entry a[href*="/w/index.php?title="],
+html.link-preview-ready .article-entry a[href*="dic.pixiv.net/"],
+html.link-preview-ready .article-entry a[href*="dic.nicovideo.jp/a/"],
+html.link-preview-ready .article-entry a[href*="dic.nicovideo.jp/id/"] {
   cursor: pointer;
 }
 @media screen and (max-width: 479px) {
@@ -3138,6 +3181,117 @@ html.link-preview-ready .article-entry a[href*="l-tike.zaiko.io/"] {
 .sc-plain .sc-title {
   font-size: 14px;
   word-break: break-all;
+}
+.sc-wikipedia {
+  --sc-accent: #6f9bd6;
+}
+.wp-media {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  background: #141414;
+  border-bottom: 1px solid #2f2f2f;
+}
+.wp-media img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+  margin: 0;
+  border: 0;
+  object-fit: contain;
+}
+.sc-wikipedia .sc-desc {
+  margin-top: 8px;
+  color: #a9a9a9;
+  font-size: 13px;
+  line-height: 1.7;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+}
+.wp-credit {
+  margin: 6px 2px 0;
+  color: #999;
+  font-size: 11.5px;
+  line-height: 1.5;
+  text-align: right;
+}
+.wp-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+.wp-credit a:hover {
+  color: var(--sc-accent);
+}
+.sc-pixiv {
+  --sc-accent: #0096fa;
+}
+.sc-nico {
+  --sc-accent: #e6b422;
+}
+.enc-media {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  background: #141414;
+  border-bottom: 1px solid #2f2f2f;
+}
+.enc-media img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+  margin: 0;
+  border: 0;
+  object-fit: contain;
+}
+.sc-pixiv .sc-desc,
+.sc-nico .sc-desc {
+  margin-top: 8px;
+  color: #a9a9a9;
+  font-size: 13px;
+  line-height: 1.7;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
 }
 .article-entry .toc ul,
 .article-entry .toc ol {

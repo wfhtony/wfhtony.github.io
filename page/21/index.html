@@ -153,7 +153,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2014/04/26/Wordpress/ant-dvd/" data-id="cmvdkqe4x001i3wv23zp26aar" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2014/04/26/Wordpress/ant-dvd/" data-id="cmw5c38v6001qmkv2813vchw9" class="article-share-link">Share</a>
       
 	  
       
@@ -210,7 +210,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2013/12/29/kancolle/" data-id="cmvdkqe4n000l3wv231dvao5m" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2013/12/29/kancolle/" data-id="cmw5c38v10014mkv2ht21b47s" class="article-share-link">Share</a>
       
 	  
       
@@ -265,7 +265,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2013/08/25/Wordpress/gp-region/" data-id="cmvdkqe5200203wv2hr4hcdf1" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2013/08/25/Wordpress/gp-region/" data-id="cmw5c38v7001ymkv2c92e510f" class="article-share-link">Share</a>
       
 	  
       
@@ -335,7 +335,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2013/07/28/Wordpress/ll-sif/" data-id="cmvdkqe55002a3wv2ax6s1owt" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2013/07/28/Wordpress/ll-sif/" data-id="cmw5c38v90026mkv2g4megow8" class="article-share-link">Share</a>
       
 	  
       
@@ -406,7 +406,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2013/07/22/Wordpress/kssma/" data-id="cmvdkqe5400273wv22h691zhu" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2013/07/22/Wordpress/kssma/" data-id="cmw5c38we005vmkv228822fki" class="article-share-link">Share</a>
       
 	  
       
@@ -472,7 +472,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2013/03/18/Wordpress/kanon-alarm/" data-id="cmvdkqe5300253wv29h4agwgv" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2013/03/18/Wordpress/kanon-alarm/" data-id="cmw5c38v80020mkv232g057bb" class="article-share-link">Share</a>
       
 	  
       
@@ -526,7 +526,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2012/12/21/update_log/" data-id="cmvdkqe51001w3wv2acghbxwb" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2012/12/21/update_log/" data-id="cmw5c38wh0068mkv217qeh4fm" class="article-share-link">Share</a>
       
 	  
       
@@ -732,7 +732,7 @@ Test Line4 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2012/12/12/Working/markdown-test/" data-id="cmvdkqe5b00353wv29lnp20ls" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2012/12/12/Working/markdown-test/" data-id="cmw5c38v4001jmkv27hqpbo0x" class="article-share-link">Share</a>
       
 	  
       
@@ -849,7 +849,7 @@ wfhtony.</span></p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2012/07/09/Wordpress/ucg-ant-dvd/" data-id="cmvdkqe5a002y3wv2hrx4esjw" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2012/07/09/Wordpress/ucg-ant-dvd/" data-id="cmw5c38wl006jmkv23u2cfzsp" class="article-share-link">Share</a>
       
 	  
       
@@ -1184,11 +1184,15 @@ wfhtony.</span></p>
 
 
 
-<!-- 音樂平臺連結懸浮卡片（link-preview） -->
-<!-- 資料由建置期 `npm run lp:update`（tools/lp-fetch.mjs）產生 source/link-preview.json -->
+<!-- 音樂平臺連結懸浮卡片（link-preview）＋百科 hover 預覽（Wikipedia／pixiv／ニコニコ大百科） -->
+<!-- 資料由建置期 `npm run lp:update`（tools/lp-fetch.mjs）與 `npm run enc:update`（tools/enc-fetch.mjs）產生 -->
 
 
-<script>window.LINK_PREVIEW = {"enable":true,"data_url":"/link-preview.json","tracks_url":"/link-preview-tracks.json","delay":250,"max_tracks":12,"embed":true,"fallback":true,"touch":false,"prefetch":true};</script>
+
+<script>window.LINK_PREVIEW = {"enable":true,"data_url":"/link-preview.json","tracks_url":"/link-preview-tracks.json","delay":250,"max_tracks":12,"embed":true,"fallback":true,"touch":false,"prefetch":true,"encyclopedia":{"enable":true,"data_url":"/encyclopedia-preview.json"}};</script>
+
+<script src="/js/link-preview-keys.js"></script>
+
 
 <script src="/js/link-preview.js"></script>
 

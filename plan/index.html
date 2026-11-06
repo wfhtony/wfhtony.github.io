@@ -412,7 +412,7 @@ PS：溝槽的「安倍經濟學」，過了十年還在追咱… <a target="_bl
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/plan/index.html" data-id="cmvdkqe4c00023wv2fc6af43u" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/plan/index.html" data-id="cmw5c38uh0002mkv2fymvhh72" class="article-share-link">Share</a>
       
 	  
       
@@ -752,11 +752,15 @@ PS：溝槽的「安倍經濟學」，過了十年還在追咱… <a target="_bl
 
 
 
-<!-- 音樂平臺連結懸浮卡片（link-preview） -->
-<!-- 資料由建置期 `npm run lp:update`（tools/lp-fetch.mjs）產生 source/link-preview.json -->
+<!-- 音樂平臺連結懸浮卡片（link-preview）＋百科 hover 預覽（Wikipedia／pixiv／ニコニコ大百科） -->
+<!-- 資料由建置期 `npm run lp:update`（tools/lp-fetch.mjs）與 `npm run enc:update`（tools/enc-fetch.mjs）產生 -->
 
 
-<script>window.LINK_PREVIEW = {"enable":true,"data_url":"/link-preview.json","tracks_url":"/link-preview-tracks.json","delay":250,"max_tracks":12,"embed":true,"fallback":true,"touch":false,"prefetch":true};</script>
+
+<script>window.LINK_PREVIEW = {"enable":true,"data_url":"/link-preview.json","tracks_url":"/link-preview-tracks.json","delay":250,"max_tracks":12,"embed":true,"fallback":true,"touch":false,"prefetch":true,"encyclopedia":{"enable":true,"data_url":"/encyclopedia-preview.json"}};</script>
+
+<script src="/js/link-preview-keys.js"></script>
+
 
 <script src="/js/link-preview.js"></script>
 

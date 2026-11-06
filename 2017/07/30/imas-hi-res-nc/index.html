@@ -1277,7 +1277,7 @@ NO MORE MEGA.</p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.wfhtony.space/2017/07/30/imas-hi-res-nc/" data-id="cmvdkqe4m000h3wv28jr7hvzn" class="article-share-link">Share</a>
+        <a data-url="https://blog.wfhtony.space/2017/07/30/imas-hi-res-nc/" data-id="cmw5c38uy000nmkv2hwnp75cr" class="article-share-link">Share</a>
       
 	  
       
@@ -1638,11 +1638,15 @@ NO MORE MEGA.</p>
 
 
 
-<!-- 音樂平臺連結懸浮卡片（link-preview） -->
-<!-- 資料由建置期 `npm run lp:update`（tools/lp-fetch.mjs）產生 source/link-preview.json -->
+<!-- 音樂平臺連結懸浮卡片（link-preview）＋百科 hover 預覽（Wikipedia／pixiv／ニコニコ大百科） -->
+<!-- 資料由建置期 `npm run lp:update`（tools/lp-fetch.mjs）與 `npm run enc:update`（tools/enc-fetch.mjs）產生 -->
 
 
-<script>window.LINK_PREVIEW = {"enable":true,"data_url":"/link-preview.json","tracks_url":"/link-preview-tracks.json","delay":250,"max_tracks":12,"embed":true,"fallback":true,"touch":false,"prefetch":true};</script>
+
+<script>window.LINK_PREVIEW = {"enable":true,"data_url":"/link-preview.json","tracks_url":"/link-preview-tracks.json","delay":250,"max_tracks":12,"embed":true,"fallback":true,"touch":false,"prefetch":true,"encyclopedia":{"enable":true,"data_url":"/encyclopedia-preview.json"}};</script>
+
+<script src="/js/link-preview-keys.js"></script>
+
 
 <script src="/js/link-preview.js"></script>
 
