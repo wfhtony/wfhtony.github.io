@@ -3243,6 +3243,23 @@ html.link-preview-ready .article-entry a[href*="dic.nicovideo.jp/id/"] {
 .wp-credit a:hover {
   color: var(--sc-accent);
 }
+.steam-widget {
+  margin: 1.6em auto;
+  max-width: 646px;
+}
+@media screen and (max-width: 479px) {
+  .steam-widget {
+    max-width: 100%;
+  }
+}
+.steam-widget-frame {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 0;
+  border-radius: 10px;
+  background: #1f1f1f;
+}
 .article-entry .toc ul,
 .article-entry .toc ol {
   margin: 0;
