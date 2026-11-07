@@ -3207,7 +3207,7 @@ html.link-preview-ready .article-entry a[href*="dic.nicovideo.jp/id/"] {
   width: 100%;
   max-height: 300px;
   overflow: hidden;
-  background: #141414;
+  background: #101010;
   border-bottom: 1px solid #2f2f2f;
 }
 .wp-media img {
@@ -3242,56 +3242,6 @@ html.link-preview-ready .article-entry a[href*="dic.nicovideo.jp/id/"] {
 }
 .wp-credit a:hover {
   color: var(--sc-accent);
-}
-.sc-pixiv {
-  --sc-accent: #0096fa;
-}
-.sc-nico {
-  --sc-accent: #e6b422;
-}
-.enc-media {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -o-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -o-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  width: 100%;
-  max-height: 300px;
-  overflow: hidden;
-  background: #141414;
-  border-bottom: 1px solid #2f2f2f;
-}
-.enc-media img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 300px;
-  margin: 0;
-  border: 0;
-  object-fit: contain;
-}
-.sc-pixiv .sc-desc,
-.sc-nico .sc-desc {
-  margin-top: 8px;
-  color: #a9a9a9;
-  font-size: 13px;
-  line-height: 1.7;
-  -webkit-line-clamp: 6;
-  line-clamp: 6;
 }
 .article-entry .toc ul,
 .article-entry .toc ol {
