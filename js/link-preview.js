@@ -8,7 +8,7 @@
  * - 事件委派（document 層）：加密文章解密後才注入的連結一樣有效（沿用 post-links.js 慣例）
  * - 只認 .article-entry 內、且 host 命中支援平臺的連結
  * - hover-intent（預設 250ms）：滑過不停留不觸發
- * - 資料來自同源靜態檔（建置期由 tools/lp-fetch.mjs 產生），首次 hover 才 lazy 載入
+ * - 資料來自同源靜態檔（建置期由 themes/landscape-plus/tools/lp-fetch.mjs 產生），首次 hover 才 lazy 載入
  * - 取不到資料時退回「品牌卡」（favicon 概念：平臺色塊 + 網域 + 連結文字），零網路請求
  * - 官方 iframe 播放器只在按「▶ 預覽」時才載入，避免 hover 就下載大量 iframe
  * - 卡片為單例，靠近視窗邊緣會自動翻轉
@@ -111,7 +111,7 @@
     return null;
   }
 
-  /* 舊格式 PS Store 連結（#!/…cid=<id>）→ 現代商品網址。規則必須與 tools/lp-fetch.mjs 完全一致。 */
+  /* 舊格式 PS Store 連結（#!/…cid=<id>）→ 現代商品網址。規則必須與 themes/landscape-plus/tools/lp-fetch.mjs 完全一致。 */
   function psnCanonical(u) {
     if (u.hostname.toLowerCase() !== 'store.playstation.com') return null;
     var h = '';
@@ -137,7 +137,7 @@
     }
     if (u.protocol !== 'http:' && u.protocol !== 'https:') return null;
 
-    /* 百科優先：key 必須與 tools/encyclopedia-lib.cjs 完全一致 */
+    /* 百科優先：key 必須與 themes/landscape-plus/tools/encyclopedia-lib.cjs 完全一致 */
     if (ENC_ENABLE && KEYS) {
       var er = KEYS.parseUrl(u);
       if (er) {

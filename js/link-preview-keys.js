@@ -1,10 +1,10 @@
 /*!
- * link-preview-keys.js — 百科連結的正規化（前端與 tools/encyclopedia-lib.cjs 同邏輯）
+ * link-preview-keys.js — 百科連結的正規化（前端與 themes/landscape-plus/tools/encyclopedia-lib.cjs 同邏輯）
  *
  * 為什麼要單獨一支：
  *   link-preview.js 在瀏覽器端判斷「這個連結屬不屬於某個百科、快取 key 是什麼」；
  *   建置期採集器用 CJS 做同一件事。兩邊若漂移，hover 會永遠查不到資料。
- *   這裡刻意只放純函式（不碰 DOM、不發請求），讓 tests/encyclopedia-lib.test.mjs
+ *   這裡刻意只放純函式（不碰 DOM、不發請求），讓 themes/landscape-plus/tests/encyclopedia-lib.test.mjs
  *   可以用 vm 載入、和 CJS 版本跑同一張 URL 表比對。
  *
  * 只認：

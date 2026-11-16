@@ -491,7 +491,7 @@
     return el.getAttribute('data-zoom-src') || el.currentSrc || el.src;
   }
 
-  // 沿用來源 <img> 的 referrerpolicy（文章圖一律由 scripts/referrerpolicy-image.js 補上
+  // 沿用來源 <img> 的 referrerpolicy（文章圖一律由 themes/landscape-plus/scripts/referrerpolicy-image.js 補上
   // `no-referrer`；檢視器是用 JS 建的 <img>，不會繼承來源屬性 —— 不沿用會出現
   // 「縮圖正常、放大圖 403」的假象，bilibili 圖牀尤其明顯）。
   function policyOf(el) {
