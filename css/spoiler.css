@@ -63,6 +63,7 @@
 }
 /* theme override: equal top and bottom spacing inside the spoiler body */
 .spoiler .spoiler-content {
+    padding-left: 1em;
     padding-top: 1.6em;
     padding-bottom: 1.6em;
 }
